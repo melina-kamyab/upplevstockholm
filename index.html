@@ -23,15 +23,27 @@
   </head>
   <body>
     <header>
-      <div class="menu-bar-icon"><nav>icon goes here</nav></div>
-      <div class="header-logo">Logo goes here</div>
-      <div class="cart-icon">cart-icon</div>
-    </header>
-    <main>
+      <div class="menu">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <div class="hamburger">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+          </div>
+        </label>
+        <ul class="navbar">
+          <li><a href="#home"> Hem</a></li>
+          <li><a href="#about">Om</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
       <div class="hero">
         <h1>Är du redo för ditt nästa äventyr?</h1>
         <p>Här kan du hitta din nästa upplevelse</p>
       </div>
+    </header>
+    <main>
       <nav class="main-container">
         <div class="experience">Kultur</div>
         <div class="experience">Gastronomi</div>
