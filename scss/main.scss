@@ -1,3 +1,5 @@
+@import "variables";
+
 html {
   width: 100%;
   height: 100%;
@@ -31,113 +33,6 @@ header {
   padding: 15px 20px;
 }
 
-.menu {
-  background-color: rgba(238, 238, 238, 0.3);
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  z-index: 3;
-  position: relative;
-}
-.menu .navbar {
-  clear: both;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
-}
-.menu .hamburger {
-  width: 39px;
-  height: 39px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 4px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-.menu .hamburger .segment {
-  width: 100%;
-  background: white;
-  height: 5px;
-  border-radius: 2px;
-  box-sizing: border-box;
-  transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-  border: 1px solid black;
-}
-.menu .menu-icon {
-  padding: 15px 20px;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.menu .menu-btn:checked ~ .navbar {
-  max-height: 230px;
-  margin-bottom: 10px;
-}
-.menu .menu-btn:checked ~ .menu-icon .hamburger {
-  justify-content: center;
-}
-.menu .menu-btn:checked ~ .menu-icon .hamburger .segment:nth-child(1) {
-  transform: translate(0, 5px) rotate(-45deg);
-  transition: transform 400ms ease-in-out;
-}
-.menu .menu-btn:checked ~ .menu-icon .hamburger .segment:nth-child(2) {
-  opacity: 0;
-  transition: opacity 400ms ease-in-out;
-}
-.menu .menu-btn:checked ~ .menu-icon .hamburger .segment:nth-child(3) {
-  transform: translate(0, -5px) rotate(45deg);
-  transition: transform 400ms ease-in-out;
-}
-.menu .menu-btn {
-  display: none;
-}
-.menu ul {
-  list-style-type: none;
-  padding-inline-start: 0;
-  margin-block-start: 0;
-  overflow: hidden;
-  margin: 0;
-  position: absolute;
-  width: 100vw;
-  top: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  padding-bottom: 10px;
-}
-.menu ul li {
-  text-align: center;
-}
-.menu ul a {
-  display: block;
-  padding: 5px;
-  text-decoration: none;
-  font-size: 1.5em;
-  color: black;
-}
-@media screen and (min-width: 769px) {
-  .menu {
-    height: 60px;
-  }
-  .menu .navbar {
-    clear: none;
-    max-height: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  .menu ul a {
-    font-size: 1.3em;
-  }
-  .menu ul a:hover {
-    text-decoration: underline;
-  }
-  .menu .menu-icon {
-    display: none;
-  }
-  .menu li a {
-    padding: 18px 30px;
-  }
-}
-
 .hero {
   font-weight: bold;
   background-image: url("../assets/hero-banner.jpg");
@@ -151,6 +46,13 @@ header {
   border: none;
 }
 
+@media screen and (min-width: 769px) {
+  .hero {
+    font-size: 2rem;
+    height: 500px;
+  }
+}
+
 main {
   h1,
   p {
@@ -159,12 +61,5 @@ main {
   span {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .hero {
-    font-size: 2rem;
-    height: 500px;
   }
 }
