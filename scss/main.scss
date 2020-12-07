@@ -14,7 +14,6 @@ body {
   margin: 0;
 }
 
-main,
 footer {
   div {
     width: auto;
@@ -55,7 +54,7 @@ header {
   font-weight: bold;
   background-image: url("../assets/hero-banner.jpg");
   height: 300px;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
   background-size: cover;
   display: flex;
@@ -77,11 +76,17 @@ header {
 
   .main-container {
     flex-direction: row;
+    justify-content: center;
+
+    div {
+      width: 100%;
+    }
   }
 }
 
 main {
   h1,
+  h2,
   p {
     text-align: center;
   }
