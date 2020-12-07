@@ -1,0 +1,29 @@
+.main-container {
+    .experience {
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: 1px;
+    h2 {
+        width: 100%;
+    }
+    a:link {
+        color: rgb(44, 44, 44);
+    }
+  }
+  .experience:nth-child(1) {
+    background-image: url("../assets/culture.jpg");
+  }
+  .experience:nth-child(2) {
+    background-image: url("../assets/gastronomi.jpg");
+  }
+  .experience:nth-child(3) {
+    background-image: url("../assets/wellness.jpg");
+  }
+  .experience:nth-child(4) {
+    background-image: url("../assets/adventure.jpg");
+  }
+}

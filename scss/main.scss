@@ -64,10 +64,19 @@ header {
   border: none;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (min-width: 769px) {
   .hero {
     font-size: 2rem;
     height: 500px;
+  }
+
+  .main-container {
+    flex-direction: row;
   }
 }
 
