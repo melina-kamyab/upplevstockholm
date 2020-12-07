@@ -18,14 +18,7 @@ body {
   margin: 0;
 }
 
-footer {
-  div {
-    width: auto;
-    border: 1px solid black;
-    flex-direction: row;
-  }
-}
-
+// THIS IS WHERE THE HEADER STARTS
 header {
   display: flex;
   flex-wrap: wrap;
@@ -33,9 +26,11 @@ header {
   align-items: center;
 }
 
+// TODO: ska denna vara en egen extend?
 .cart-icon {
   padding: 15px 20px;
   position: relative;
+  color: rgb(50, 50, 50);
   &::after {
     content: attr(data-number-of-items);
     display: block;
@@ -65,12 +60,26 @@ header {
   border: none;
 }
 
+// THIS IS WHERE THE MAIN STARTS
 .main-container {
   display: flex;
   flex-direction: column;
   position: static;
 }
 
+main {
+  h1,
+  h2,
+  p {
+    text-align: center;
+  }
+  span {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+  }
+}
+
+// DESKTOP VERSION FOR MAIN
 @media screen and (min-width: 769px) {
   .hero {
     font-size: 2rem;
@@ -87,14 +96,58 @@ header {
   }
 }
 
-main {
-  h1,
-  h2,
-  p {
-    text-align: center;
+// THIS IS WHERE THE FOOTER STARTS
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem;
   }
-  span {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px;
+
+  .logo {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid white;
+    padding: 1.3rem;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  i {
+    align-self: center;
+  }
+
+  a:link {
+    color: rgb(44, 44, 44);
+  }
+
+  a:hover {
+    color: grey;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    list-style-type: none;
+    padding-left: 0;
+    width: 40%;
+    color: rgb(50, 50, 50);
+  }
+}
+
+// DESKTOP VERSION FOR FOOTER
+@media screen and (min-width: 769px) {
+  footer {
+    .logo {
+      padding: 1.5rem;
+      font-size: 1.4rem;
+    }
   }
 }
