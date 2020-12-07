@@ -1,17 +1,17 @@
 .main-container {
-    .experience {
+  .experience {
+    height: 150px;
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 200px;
     margin-top: 1px;
     h2 {
-        width: 100%;
+      width: 100%;
     }
     a:link {
-        color: rgb(44, 44, 44);
+      color: rgb(44, 44, 44);
     }
   }
   .experience:nth-child(1) {

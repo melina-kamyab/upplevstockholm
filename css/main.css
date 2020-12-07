@@ -65,7 +65,7 @@
   overflow: hidden;
   margin: 0;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   top: 100%;
   background: rgba(255, 255, 255, 0.7);
   padding-bottom: 10px; }
@@ -99,12 +99,12 @@
     padding: 18px 30px; } }
 
 .main-container .experience {
+  height: 150px;
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 200px;
   margin-top: 1px; }
   .main-container .experience h2 {
     width: 100%; }
@@ -122,6 +122,9 @@
 
 .main-container .experience:nth-child(4) {
   background-image: url("../assets/adventure.jpg"); }
+
+* {
+  box-sizing: border-box; }
 
 html {
   width: 100%;
@@ -169,7 +172,7 @@ header {
   font-weight: bold;
   background-image: url("../assets/hero-banner.jpg");
   height: 300px;
-  width: 100%;
+  width: 100vw;
   flex-direction: column;
   background-size: cover;
   display: flex;
