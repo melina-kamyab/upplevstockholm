@@ -58,18 +58,17 @@ header {
   font-weight: bold;
   background-image: url("../assets/hero-banner.jpg");
   height: 300px;
-  width: 100vw;
   flex-direction: column;
   background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   border: none;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
+  position: static;
 }
 
 @media screen and (min-width: 769px) {

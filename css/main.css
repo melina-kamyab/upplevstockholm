@@ -2,7 +2,7 @@
   background-color: rgba(238, 238, 238, 0.3);
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   z-index: 3;
-  position: relative; }
+  position: static; }
 
 .menu .navbar {
   clear: both;
@@ -66,9 +66,14 @@
   margin: 0;
   position: absolute;
   width: 100vw;
-  top: 100%;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.7);
-  padding-bottom: 10px; }
+  padding-top: 10px; }
+
+@media screen and (min-width: 769px) {
+  .menu ul {
+    padding-top: 0;
+    background: rgba(255, 255, 255, 0); } }
 
 .menu ul li {
   text-align: center; }
@@ -98,29 +103,33 @@
   .menu li a {
     padding: 18px 30px; } }
 
-.main-container .experience {
-  height: 150px;
+.experience {
+  height: 200px;
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 1px; }
-  .main-container .experience h2 {
-    width: 100%; }
-  .main-container .experience a:link {
+  .experience a:link {
     color: #2c2c2c; }
+  .experience h2 {
+    margin: 0; }
+  .experience div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; }
 
-.main-container .experience:nth-child(1) {
+.experience:nth-child(1) {
   background-image: url("../assets/culture.jpg"); }
 
-.main-container .experience:nth-child(2) {
+.experience:nth-child(2) {
   background-image: url("../assets/gastronomi.jpg"); }
 
-.main-container .experience:nth-child(3) {
+.experience:nth-child(3) {
   background-image: url("../assets/wellness.jpg"); }
 
-.main-container .experience:nth-child(4) {
+.experience:nth-child(4) {
   background-image: url("../assets/adventure.jpg"); }
 
 * {
@@ -172,17 +181,16 @@ header {
   font-weight: bold;
   background-image: url("../assets/hero-banner.jpg");
   height: 300px;
-  width: 100vw;
   flex-direction: column;
   background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   border: none; }
 
 .main-container {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: static; }
 
 @media screen and (min-width: 769px) {
   .hero {
