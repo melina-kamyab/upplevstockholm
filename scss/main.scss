@@ -142,12 +142,36 @@ footer {
   }
 }
 
+.footer-payment {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+.payment-method {
+  width: 3rem;
+}
+
 // DESKTOP VERSION FOR FOOTER
 @media screen and (min-width: 769px) {
   footer {
+    display: flex;
+    flex-direction: row;
     .logo {
       padding: 1.5rem;
-      font-size: 1.4rem;
+      background-color: white;
+      color: rgb(50, 50, 50);
     }
+  }
+
+  .footer-payment,
+  ul {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .payment-method,
+  li {
+    padding: 0.5rem;
   }
 }
