@@ -1,5 +1,5 @@
 $ (function(){
-    console.log(afternoonTeaExperianceThree);
+    console.log(listOffExperiance);
 })
 class Experience {
     constructor(Id,Category,Subcategory,Image,Title,Description,Price) {
@@ -12,10 +12,11 @@ class Experience {
         this.Price = Price;
   }
 }
+let listOffExperiance = [];
 //********* Culture - Objects **********// 
 let museumExperianceOne = new Experience (1,'Culture','Museum','./assets/experiences/1.vasa.jpg','Heldag på Vasa Museet','Decription', 100);
 let museumExperianceTwo = new Experience (2,'Culture','Museum','./assets/experiences/2.abba.jpg','Heldag på ABBA Museet','Decription',149);
-let museumExperianceTree = new Experience (3,'Culture','Museum','./assets/experiences/3.moderna.jpg','Heldag på Moderna Museet','Description', 100);
+let museumExperianceThree = new Experience (3,'Culture','Museum','./assets/experiences/3.moderna.jpg','Heldag på Moderna Museet','Description', 100);
 let theaterExperianceOne = new Experience (4,'Culture','Theater','./assets/experiences/4.dramaten.jpg','Föreställning på Dramaten','Description',400);
 let theaterExperianceTwo = new Experience (5,'Culture','Theater','./assets/experiences/5.oscarsteatern.jpg','Föreställning på OscarsTeater','Decription',350);
 let theaterExperianceThree = new Experience (6,'Culture','Theater','./assets/experiences/6.operan.jpg','Opera på kungliga Operan','Description',600);
@@ -56,4 +57,5 @@ let relaxationExperianceOne = new Experience (34,'Wellness','Relaxation','./asse
 let relaxationExperianceTwo = new Experience (35,'Wellness','Relaxation','./assets/experiences/35.meditation.jpg','Klippkort 5 ggr - Kadampa meditationscenter Stockholm','Description',2000);
 let relaxationExperianceThree = new Experience (36,'Wellness','Relaxation','./assets/experiences/36.qigong.jpg','Qihealing på Qigongcenter Stockholm','Description',500);
 
-
+//********* Array with all the Objects **********// 
+listOffExperiance.push(museumExperianceOne,museumExperianceTwo,museumExperianceThree, theaterExperianceOne,theaterExperianceTwo,theaterExperianceThree,musicExperianceOne,musicExperianceTwo,musicExperianceThree,dinnerExperianceOne,dinnerExperianceTwo,dinnerExperianceThree,afternoonTeaExperianceOne,afternoonTeaExperianceTwo,afternoonTeaExperianceThree,alcoholExperianceOne,alcoholExperianceTwo,alcoholExperianceThree,outsideExperianceOne,outsideExperianceTwo,outsideExperianceThree,indoorExperianceOne,indoorExperianceTwo,indoorExperianceThree,familyExperianceOne,familyExperianceTwo,familyExperianceThree,facialExperianceOne,facialExperianceTwo,facialExperianceThree,massageExperianceOne,massageExperianceTwo,massageExperianceThree,relaxationExperianceOne,relaxationExperianceTwo,relaxationExperianceThree);
