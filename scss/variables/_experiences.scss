@@ -1,0 +1,26 @@
+// EXPERINCES STYLING
+.culture,
+.gastronomy,
+.wellness,
+.adventure {
+  padding: 1rem;
+  color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+  .culture,
+  .gastronomy,
+  .wellness,
+  .adventure {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+  }
+}
