@@ -4,65 +4,25 @@ $(function () {
   console.log(listOfExperience);
 
   $.each(listOfExperience, (i, experience) => {
-    if (experience.Subcategory === "Theater") {
-      let container = $("<div>").addClass("theatre-container");
-      let header = $("<h5>");
-      header.text(experience.Title);
+    let container = $("<div>").addClass("item-container");
+    let header = $("<h5>");
+    header.text(experience.Title);
 
-      let image = $("<img>").attr("src", experience.Image).addClass("image");
+    let image = $("<img>").attr("src", experience.Image).addClass("image");
 
-      let description = $("<p>");
-      description.text(experience.Description);
+    let description = $("<p>");
+    description.text(experience.Description);
 
-      let price = $("<p>");
-      price.text(experience.Price);
+    let price = $("<p>");
+    price.text(experience.Price);
 
-      //Appendings, dessa bör gå in i en separat funktion, se createHTML() nedan!
-      header.appendTo(container);
-      image.appendTo(container);
-      description.appendTo(container);
-      price.appendTo(container);
-      $(container).appendTo($(".theatre"));
-    }
-    if (experience.Subcategory === "Music") {
-      let container = $("<div>").addClass("music-container");
-      let header = $("<h5>");
-      header.text(experience.Title);
-
-      let image = $("<img>").attr("src", experience.Image).addClass("image");
-
-      let description = $("<p>");
-      description.text(experience.Description);
-
-      let price = $("<p>");
-      price.text(experience.Price);
-
-      //Appendings, dessa bör gå in i en separat funktion
-      header.appendTo(container);
-      image.appendTo(container);
-      description.appendTo(container);
-      price.appendTo(container);
-      $(container).appendTo($(".music"));
-    }
-    if (experience.Subcategory === "Museum") {
-      let container = $("<div>").addClass("museum-container");
-      let header = $("<h5>");
-      header.text(experience.Title);
-
-      let image = $("<img>").attr("src", experience.Image).addClass("image");
-
-      let description = $("<p>");
-      description.text(experience.Description);
-
-      let price = $("<p>");
-      price.text(experience.Price);
-      //Appendings, dessa bör gå in i en separat funktion
-      header.appendTo(container);
-      image.appendTo(container);
-      description.appendTo(container);
-      price.appendTo(container);
-      $(container).appendTo($(".museum"));
-    }
+    //Appendings, dessa bör gå in i en separat funktion, se createHTML() nedan!
+    header.appendTo(container);
+    image.appendTo(container);
+    description.appendTo(container);
+    price.appendTo(container);
+    console.log(experience.Category);
+    $(container).appendTo($("." + experience.Subcategory.toLowerCase()));
     createHTMl();
   });
 });
@@ -187,7 +147,7 @@ let dinnerExperianceThree = new Experience(
   12,
   "Food Experiences",
   "Dinner",
-  "./assets/experiences/.12.thai.jpg",
+  "./assets/experiences/12.thai.jpg",
   "Thailändsk trerätters",
   "Description",
   500
@@ -195,8 +155,8 @@ let dinnerExperianceThree = new Experience(
 let afternoonTeaExperianceOne = new Experience(
   13,
   "Food Experiences",
-  "Afternoon tea",
-  "./assets/experiences/13.afternoonhamilton.jpg",
+  "afternoon-tea",
+  "./assets/experiences/13.afternoonhamlet.jpg",
   "Afternoon tea för två pers - Hamilton Hotel",
   "Description",
   450
@@ -204,7 +164,7 @@ let afternoonTeaExperianceOne = new Experience(
 let afternoonTeaExperianceTwo = new Experience(
   14,
   "Food Experiences",
-  "Afternoon tea",
+  "afternoon-tea",
   "./assets/experiences/14.afternoondiplomat.jpg",
   "Afternoon tea för fyra pers - Grand hotel",
   "Description",
@@ -213,8 +173,8 @@ let afternoonTeaExperianceTwo = new Experience(
 let afternoonTeaExperianceThree = new Experience(
   15,
   "Food Experiences",
-  "Afternoon tea",
-  "./assets/experiences/15.afternoonsvenskttenn.jpg",
+  "afternoon-tea",
+  "./assets/experiences/15.afternoonsvenkttenn.jpg",
   "Afternoon tea för två pers - Svenskt Tenn",
   "Description",
   500
@@ -250,8 +210,8 @@ let alcoholExperianceThree = new Experience(
 //********* Adventure - Objects **********//
 let outsideExperianceOne = new Experience(
   19,
-  "Adventure",
-  "Outside",
+  "adventure",
+  "outdoors",
   "./assets/experiences/19.aventyrsbana.jpg",
   "Äventyrsbana",
   "Description",
@@ -259,8 +219,8 @@ let outsideExperianceOne = new Experience(
 );
 let outsideExperianceTwo = new Experience(
   20,
-  "Adventure",
-  "Outside",
+  "adventure",
+  "outdoors",
   "./assets/experiences/20.skargard.jpg",
   "Skärgårdstur med middag",
   "Description",
@@ -268,8 +228,8 @@ let outsideExperianceTwo = new Experience(
 );
 let outsideExperianceThree = new Experience(
   21,
-  "Adventure",
-  "Outside",
+  "adventure",
+  "outdoors",
   "./assets/experiences/21.takvandring.jpg",
   "Vandring på tak",
   "Description",
@@ -277,8 +237,8 @@ let outsideExperianceThree = new Experience(
 );
 let indoorExperianceOne = new Experience(
   22,
-  "Adventure",
-  "indoor",
+  "adventure",
+  "indoors",
   "./assets/experiences/22.weekend.jpg",
   "Hotel weekend för två",
   "Description",
@@ -286,8 +246,8 @@ let indoorExperianceOne = new Experience(
 );
 let indoorExperianceTwo = new Experience(
   23,
-  "Adventure",
-  "indoor",
+  "adventure",
+  "indoors",
   "./assets/experiences/23.padel.jpg",
   "Padel",
   "Description",
@@ -295,8 +255,8 @@ let indoorExperianceTwo = new Experience(
 );
 let indoorExperianceThree = new Experience(
   24,
-  "Adventure",
-  "indoor",
+  "adventure",
+  "indoors",
   "./assets/experiences/24.biomiddag.jpg",
   "Bio med middag för två",
   "Description",
@@ -304,8 +264,8 @@ let indoorExperianceThree = new Experience(
 );
 let familyExperianceOne = new Experience(
   25,
-  "Adventure",
-  "Family",
+  "adventure",
+  "family",
   "./assets/experiences/25.fjarilshuset.jpg",
   "Fjärilshuset",
   "Description",
@@ -313,15 +273,15 @@ let familyExperianceOne = new Experience(
 );
 let familyExperianceTwo = new Experience(
   26,
-  "Adventure",
-  "Family",
+  "adventure",
+  "family",
   "./assets/experiences/26.gronalund.jpg",
   "Grönalund inc åkband & entre för 4 pers"
 );
 let familyExperianceThree = new Experience(
   27,
-  "Adventure",
-  "Family",
+  "adventure",
+  "family",
   "./assets/experiences/27.luftballong.jpg",
   "Flyga luftballong",
   "Description",
@@ -332,7 +292,7 @@ let familyExperianceThree = new Experience(
 let facialExperianceOne = new Experience(
   28,
   "Wellness",
-  "Facial",
+  "facials",
   "./assets/experiences/28.antiaging.jpg",
   "Anti aging ansiktsbehandling 60 min",
   "Description",
@@ -341,8 +301,8 @@ let facialExperianceOne = new Experience(
 let facialExperianceTwo = new Experience(
   29,
   "Wellness",
-  "Facial",
-  "./assets/experiences/29.ansiktbehandling.jpg",
+  "facials",
+  "./assets/experiences/29.ansiktsbehandling.jpg",
   "Klassisk ansiksbehandling 45min",
   "Description",
   500
@@ -350,7 +310,7 @@ let facialExperianceTwo = new Experience(
 let facialExperianceThree = new Experience(
   30,
   "Wellness",
-  "Facial",
+  "facials",
   "./assets/experiences/30.lyxbehandling.jpg",
   "Lyx ansiksbehandling 90min",
   "Description",
@@ -359,7 +319,7 @@ let facialExperianceThree = new Experience(
 let massageExperianceOne = new Experience(
   31,
   "Wellness",
-  "Massage",
+  "massage",
   "./assets/experiences/31.yasuragi.jpg",
   "Heldag på Yasuragi + 1h massage för 2",
   "Description",
@@ -368,7 +328,7 @@ let massageExperianceOne = new Experience(
 let massageExperianceTwo = new Experience(
   32,
   "Wellness",
-  "Massage",
+  "massage",
   "./assets/experiences/32.algmassage.jpg",
   "Alginpackning inkl massage 30 min - Sparadiset",
   "Description",
@@ -377,7 +337,7 @@ let massageExperianceTwo = new Experience(
 let massageExperianceThree = new Experience(
   33,
   "Wellness",
-  "Massage",
+  "massage",
   "./assets/experiences/33.gravidmassage.jpg",
   "Gravidmassage - Sturebadet",
   "Description",
@@ -386,8 +346,8 @@ let massageExperianceThree = new Experience(
 let relaxationExperianceOne = new Experience(
   34,
   "Wellness",
-  "Relaxation",
-  "./assets/experiences/24.yogayama.png",
+  "yoga-meditation-qigong",
+  "./assets/experiences/34.yogayama.png",
   "Klippkort 5 ggr - Yogayama Östermalm",
   "Description",
   2000
@@ -395,7 +355,7 @@ let relaxationExperianceOne = new Experience(
 let relaxationExperianceTwo = new Experience(
   35,
   "Wellness",
-  "Relaxation",
+  "yoga-meditation-qigong",
   "./assets/experiences/35.meditation.jpg",
   "Klippkort 5 ggr - Kadampa meditationscenter Stockholm",
   "Description",
@@ -404,7 +364,7 @@ let relaxationExperianceTwo = new Experience(
 let relaxationExperianceThree = new Experience(
   36,
   "Wellness",
-  "Relaxation",
+  "yoga-meditation-qigong",
   "./assets/experiences/36.qigong.jpg",
   "Qihealing på Qigongcenter Stockholm",
   "Description",
