@@ -23,6 +23,7 @@ let theaterExperianceThree = new Experience (6,'Culture','Theater','./assets/exp
 let musicExperianceOne = new Experience (7,'Culture','Music','./assets/experiences/7.zaralarsson.jpg','Zara Larsson i Globen','Description',600);
 let musicExperianceTwo = new Experience (8,'Culture','Music','./assets/experiences/8.allsang.jpg','Allsång på skansen','Description',200);
 let musicExperianceThree = new Experience (9,'Culture','Music','./assets/experiences/9.agnescarlsson.jpg','Agnes Carlsson på Tele 2 arenan','Description',350);
+listOffExperiance.push(museumExperianceOne,museumExperianceTwo,museumExperianceThree,theaterExperianceOne,theaterExperianceTwo,theaterExperianceThree,musicExperianceOne,musicExperianceTwo,musicExperianceThree);
 
 //********* Food Experiances - Objects **********// 
 let dinnerExperianceOne = new Experience (10,'Food Experiences','Dinner','./assets/experiences/10.indiskmat.jpg','Indisk trerätters middag inkl. ett glas öl eller vin','Description',450);
@@ -34,6 +35,7 @@ let afternoonTeaExperianceThree = new Experience (15,'Food Experiences','Afterno
 let alcoholExperianceOne = new Experience (16,'Food Experiences','Alcohol','./assets/experiences/16.olprovning.jpg','Ölprovning','Description',1800);
 let alcoholExperianceTwo = new Experience (17,'Food Experiences','Alcohol','./assets/experiences/17.vinost.jpg','Exklusiv Vin och ost provning','Description',1900);
 let alcoholExperianceThree = new Experience (18,'Food Experiences','Alcohol','./assets/experiences/18.champagne.jpg','Champange Provning','Description',950);
+listOffExperiance.push(dinnerExperianceOne,dinnerExperianceTwo,dinnerExperianceThree,afternoonTeaExperianceOne,afternoonTeaExperianceTwo,afternoonTeaExperianceThree,alcoholExperianceOne,alcoholExperianceTwo,alcoholExperianceThree);
 
 //********* Adventure - Objects **********// 
 let outsideExperianceOne = new Experience (19,'Adventure','Outside','./assets/experiences/19.aventyrsbana.jpg','Äventyrsbana','Description',2000);
@@ -45,6 +47,7 @@ let indoorExperianceThree = new Experience (24,'Adventure','indoor','./assets/ex
 let familyExperianceOne = new Experience (25,'Adventure','Family','./assets/experiences/25.fjarilshuset.jpg','Fjärilshuset','Description',150);
 let familyExperianceTwo = new Experience (26,'Adventure','Family','./assets/experiences/26.gronalund.jpg','Grönalund inc åkband & entre för 4 pers');
 let familyExperianceThree = new Experience (27,'Adventure','Family','./assets/experiences/27.luftballong.jpg','Flyga luftballong','Description',1000);
+listOffExperiance.push(outsideExperianceOne,outsideExperianceTwo,outsideExperianceThree,indoorExperianceOne,indoorExperianceTwo,indoorExperianceThree,familyExperianceOne,familyExperianceTwo,familyExperianceThree);
 
 //********* Wellness - Objects **********// 
 let facialExperianceOne = new Experience (28,'Wellness','Facial','./assets/experiences/28.antiaging.jpg','Anti aging ansiktsbehandling 60 min','Description',800);
@@ -58,4 +61,4 @@ let relaxationExperianceTwo = new Experience (35,'Wellness','Relaxation','./asse
 let relaxationExperianceThree = new Experience (36,'Wellness','Relaxation','./assets/experiences/36.qigong.jpg','Qihealing på Qigongcenter Stockholm','Description',500);
 
 //********* Array with all the Objects **********// 
-listOffExperiance.push(museumExperianceOne,museumExperianceTwo,museumExperianceThree, theaterExperianceOne,theaterExperianceTwo,theaterExperianceThree,musicExperianceOne,musicExperianceTwo,musicExperianceThree,dinnerExperianceOne,dinnerExperianceTwo,dinnerExperianceThree,afternoonTeaExperianceOne,afternoonTeaExperianceTwo,afternoonTeaExperianceThree,alcoholExperianceOne,alcoholExperianceTwo,alcoholExperianceThree,outsideExperianceOne,outsideExperianceTwo,outsideExperianceThree,indoorExperianceOne,indoorExperianceTwo,indoorExperianceThree,familyExperianceOne,familyExperianceTwo,familyExperianceThree,facialExperianceOne,facialExperianceTwo,facialExperianceThree,massageExperianceOne,massageExperianceTwo,massageExperianceThree,relaxationExperianceOne,relaxationExperianceTwo,relaxationExperianceThree);
+listOffExperiance.push(facialExperianceOne,facialExperianceTwo,facialExperianceThree,massageExperianceOne,massageExperianceTwo,massageExperianceThree,relaxationExperianceOne,relaxationExperianceTwo,relaxationExperianceThree);
