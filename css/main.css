@@ -179,10 +179,17 @@ header {
   justify-content: space-between;
   align-items: center; }
 
+.nav-logo {
+  text-decoration: none;
+  color: black; }
+
 .cart-icon {
   padding: 15px 20px;
   position: relative;
   color: #323232; }
+  .cart-icon a {
+    text-decoration: none;
+    color: #323232; }
   .cart-icon::after {
     content: attr(data-number-of-items);
     display: block;
@@ -265,6 +272,9 @@ footer {
     padding-left: 0;
     width: 40%;
     color: #323232; }
+    footer ul a {
+      text-decoration: none;
+      color: black; }
 
 .footer-payment {
   display: flex;
@@ -275,6 +285,10 @@ footer {
   width: 3rem; }
 
 @media screen and (min-width: 769px) {
+  .cart-icon {
+    padding: 15px 20px;
+    position: relative;
+    color: #323232; }
   footer {
     display: flex;
     flex-direction: row; }
@@ -287,6 +301,10 @@ footer {
     width: 40%;
     display: flex;
     flex-direction: column; }
+    .footer-payment a,
+    ul a {
+      text-decoration: none;
+      color: black; }
   .payment-method,
   footer li {
     padding: 0.5rem; } }
