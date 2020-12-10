@@ -1,8 +1,74 @@
-// const {Console} = require("console");
+//const {Console} = require("console");
 
 $(function () {
   console.log(listOfExperience);
+
+  $.each(listOfExperience, (i, experience) => {
+    if (experience.Subcategory === "Theater") {
+      let container = $("<div>").addClass("theatre-container");
+      let header = $("<h5>");
+      header.text(experience.Title);
+
+      let image = $("<img>").attr("src", experience.Image).addClass("image");
+
+      let description = $("<p>");
+      description.text(experience.Description);
+
+      let price = $("<p>");
+      price.text(experience.Price);
+
+      //Appendings, dessa bör gå in i en separat funktion, se createHTML() nedan!
+      header.appendTo(container);
+      image.appendTo(container);
+      description.appendTo(container);
+      price.appendTo(container);
+      $(container).appendTo($(".theatre"));
+    }
+    if (experience.Subcategory === "Music") {
+      let container = $("<div>").addClass("music-container");
+      let header = $("<h5>");
+      header.text(experience.Title);
+
+      let image = $("<img>").attr("src", experience.Image).addClass("image");
+
+      let description = $("<p>");
+      description.text(experience.Description);
+
+      let price = $("<p>");
+      price.text(experience.Price);
+
+      //Appendings, dessa bör gå in i en separat funktion
+      header.appendTo(container);
+      image.appendTo(container);
+      description.appendTo(container);
+      price.appendTo(container);
+      $(container).appendTo($(".music"));
+    }
+    if (experience.Subcategory === "Museum") {
+      let container = $("<div>").addClass("museum-container");
+      let header = $("<h5>");
+      header.text(experience.Title);
+
+      let image = $("<img>").attr("src", experience.Image).addClass("image");
+
+      let description = $("<p>");
+      description.text(experience.Description);
+
+      let price = $("<p>");
+      price.text(experience.Price);
+      //Appendings, dessa bör gå in i en separat funktion
+      header.appendTo(container);
+      image.appendTo(container);
+      description.appendTo(container);
+      price.appendTo(container);
+      $(container).appendTo($(".museum"));
+    }
+    createHTMl();
+  });
 });
+
+function createHTMl() {}
+
 class Experience {
   constructor(Id, Category, Subcategory, Image, Title, Description, Price) {
     this.Id = Id;
@@ -384,34 +450,3 @@ listOfExperience.push(
   relaxationExperianceTwo,
   relaxationExperianceThree
 );
-
-$.each(listOfExperience, (i, experience) => {
-  if (listOfExperience[i].Subcategory === "Museum") {
-    let header = $("<h5>");
-    header.text(listOfExperience[i].Title);
-    $(header).appendTo($(".museum"));
-    console.log(header);
-
-    let image = $("<div>");
-    image.text(listOfExperience[i].Image);
-    $(image).appendTo($(".museum"));
-    console.log(image);
-
-    let description = $("<p>");
-    description.text(listOfExperience[i].Description);
-    $(description).appendTo($(".museum"));
-    console.log(description);
-  } //else if ( listOfExperience[i].Subcategory === 'Theater') {
-  //
-
-  // } else ( listOfExperience[i].Subcategory === 'Music'){
-  //
-  // }
-
-  //   createHTMl();
-});
-
-// function createHTMl() {
-//   $(".culture").appendTo($("body"));
-//   $(".culture").text(theatreExperiences);
-// }
