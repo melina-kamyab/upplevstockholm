@@ -159,6 +159,46 @@
       flex-direction: row; } }
 
 * {
+  padding: 0;
+  margin: 0; }
+
+.experiences-wrapper, .experiences-total {
+  background-color: white;
+  margin: 0.5rem;
+  height: 7rem; }
+
+.shoppingcart-wrapper {
+  background-color: #323232; }
+  .shoppingcart-wrapper .experiences-wrapper {
+    margin-bottom: 0.5rem; }
+  .shoppingcart-wrapper .experiences-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .shoppingcart-wrapper .experiences-total .checkout-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 170px;
+      margin-bottom: 1rem; }
+    .shoppingcart-wrapper .experiences-total button {
+      padding: 0.5rem; }
+
+@media screen and (min-width: 769px) {
+  .shoppingcart-wrapper {
+    display: flex; }
+    .shoppingcart-wrapper .experiences-wrapper {
+      margin-bottom: 0;
+      width: 70%; }
+    .shoppingcart-wrapper .experiences-total {
+      width: 30%; }
+      .shoppingcart-wrapper .experiences-total .checkout-wrapper {
+        display: flex;
+        justify-content: space-between;
+        min-width: 30%;
+        margin-bottom: 1rem; } }
+
+* {
   box-sizing: border-box; }
 
 html {
