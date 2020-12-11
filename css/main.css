@@ -157,37 +157,37 @@
   padding: 0;
   margin: 0; }
 
-.experiences-wrapper, .experiences-total {
+.shoppingcart-items-container, .shoppingcart-total {
   background-color: white;
   margin: 0.5rem;
   height: 7rem; }
 
-.shoppingcart-wrapper {
+.shoppingcart-container {
   background-color: #323232; }
-  .shoppingcart-wrapper .experiences-wrapper {
+  .shoppingcart-container .shoppingcart-items-container {
     margin-bottom: 0.5rem; }
-  .shoppingcart-wrapper .experiences-total {
+  .shoppingcart-container .shoppingcart-total {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; }
-    .shoppingcart-wrapper .experiences-total .checkout-wrapper {
+    .shoppingcart-container .shoppingcart-total .checkout-container {
       display: flex;
       justify-content: space-between;
       width: 170px;
       margin-bottom: 1rem; }
-    .shoppingcart-wrapper .experiences-total button {
+    .shoppingcart-container .shoppingcart-total button {
       padding: 0.5rem; }
 
 @media screen and (min-width: 769px) {
-  .shoppingcart-wrapper {
+  .shoppingcart-container {
     display: flex; }
-    .shoppingcart-wrapper .experiences-wrapper {
+    .shoppingcart-container .shoppingcart-items-container {
       margin-bottom: 0;
       width: 70%; }
-    .shoppingcart-wrapper .experiences-total {
+    .shoppingcart-container .shoppingcart-total {
       width: 30%; }
-      .shoppingcart-wrapper .experiences-total .checkout-wrapper {
+      .shoppingcart-container .shoppingcart-total .checkout-container {
         display: flex;
         justify-content: space-between;
         min-width: 30%;

@@ -3,22 +3,22 @@
     padding: 0;
     margin: 0;
 }
-.experiences-wrapper,.experiences-total{
+.shoppingcart-items-container,.shoppingcart-total{
     background-color: white;
     margin: 0.5rem;
     height: 7rem;
 }
-.shoppingcart-wrapper{
+.shoppingcart-container{
     background-color: #323232;
-    .experiences-wrapper{
+    .shoppingcart-items-container{
         margin-bottom: 0.5rem;
     }
-    .experiences-total{
+    .shoppingcart-total{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        .checkout-wrapper{
+        .checkout-container{
             display: flex;
             justify-content: space-between;
             width: 170px;
@@ -32,15 +32,15 @@
 
 // DESKTOP VERSION OF EXPERIENCES
 @media screen and (min-width: 769px) {
-    .shoppingcart-wrapper{
+    .shoppingcart-container{
         display: flex;
-        .experiences-wrapper{
+        .shoppingcart-items-container{
             margin-bottom: 0;
             width: 70%;
         }
-        .experiences-total{
+        .shoppingcart-total{
             width: 30%;
-            .checkout-wrapper{
+            .checkout-container{
                 display: flex;
                 justify-content: space-between;
                 min-width: 30%;
