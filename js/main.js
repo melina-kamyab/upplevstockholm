@@ -40,6 +40,7 @@ class Experience {
     this.Price = Price;
   }
 }
+
 let listOfExperience = [];
 //********* Culture - Objects **********//
 let museumExperianceOne = new Experience(
