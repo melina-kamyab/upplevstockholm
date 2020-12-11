@@ -1,13 +1,11 @@
 .menu {
-  background-color: rgba(238, 238, 238, 0.3);
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  z-index: 3;
   position: static;
 }
 .menu .navbar {
   clear: both;
   max-height: 0;
   transition: max-height 0.2s ease-out;
+  
 }
 .menu .hamburger {
   width: 39px;
@@ -17,7 +15,6 @@
   justify-content: space-evenly;
   padding: 4px;
   border-radius: 6px;
-  box-sizing: border-box;
 }
 .menu .hamburger .segment {
   width: 100%;
@@ -38,7 +35,7 @@
 }
 .menu .menu-btn:checked ~ .navbar {
   max-height: 230px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 .menu .menu-btn:checked ~ .menu-icon .hamburger {
   justify-content: center;
@@ -60,21 +57,20 @@
 }
 .menu ul {
   list-style-type: none;
-  padding-inline-start: 0;
-  margin-block-start: 0;
+  padding-left: 0;
   overflow: hidden;
   margin: 0;
   position: absolute;
   width: 100vw;
-  max-width:100%;
-  background: rgba(255, 255, 255, 0.7);
+  max-width: 100%;
+  background-color: white;
   padding-top: 10px;
 }
 
 @media screen and (min-width: 769px) {
   .menu ul {
     padding-top: 0;
-    background: rgba(255, 255, 255, 0);
+    background-color: none;
   }
 }
 

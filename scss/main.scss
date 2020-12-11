@@ -25,12 +25,21 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.nav-logo{
+  text-decoration: none;
+  color: black;
+  z-index: 3;
+}
 
 // TODO: ska denna vara en egen extend?
 .cart-icon {
   padding: 15px 20px;
   position: relative;
   color: rgb(50, 50, 50);
+  a{
+    text-decoration: none;
+    color: rgb(50, 50, 50);
+  }
   &::after {
     content: attr(data-number-of-items);
     display: block;
@@ -136,6 +145,10 @@ footer {
     color: grey;
   }
   ul {
+    a{
+      text-decoration: none;
+      color: black;
+    }
     display: flex;
     justify-content: space-between;
     align-self: center;
@@ -157,6 +170,11 @@ footer {
 
 // DESKTOP VERSION FOR FOOTER
 @media screen and (min-width: 769px) {
+  .cart-icon {
+    padding: 15px 20px;
+    position: relative;
+    color: rgb(50, 50, 50);
+  }
   footer {
     display: flex;
     flex-direction: row;
@@ -169,6 +187,10 @@ footer {
 
   .footer-payment,
   ul {
+    a{
+      text-decoration: none;
+      color: black;
+    }
     width: 40%;
     display: flex;
     flex-direction: column;

@@ -1,0 +1,51 @@
+//SHOPPINGCART STYLING STARTS HERE
+*{
+    padding: 0;
+    margin: 0;
+}
+.experiences-wrapper,.experiences-total{
+    background-color: white;
+    margin: 0.5rem;
+    height: 7rem;
+}
+.shoppingcart-wrapper{
+    background-color: #323232;
+    .experiences-wrapper{
+        margin-bottom: 0.5rem;
+    }
+    .experiences-total{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .checkout-wrapper{
+            display: flex;
+            justify-content: space-between;
+            width: 170px;
+            margin-bottom: 1rem;
+        }
+        button{
+            padding: 0.5rem;
+        }
+    }
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+    .shoppingcart-wrapper{
+        display: flex;
+        .experiences-wrapper{
+            margin-bottom: 0;
+            width: 70%;
+        }
+        .experiences-total{
+            width: 30%;
+            .checkout-wrapper{
+                display: flex;
+                justify-content: space-between;
+                min-width: 30%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+  }
