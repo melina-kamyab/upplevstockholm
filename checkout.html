@@ -35,7 +35,7 @@
         </label>
         <ul class="navbar">
           <li><a href="index.html">Hem</a></li>
-          <li><a href="experiences.html">Upplevelser</a></li>
+          <li><a href="experiences.html">Om</a></li>
         </ul>
       </div>
       <a href="index.html" class="nav-logo"
@@ -48,58 +48,48 @@
       </a>
     </header>
     <main>
-      <div class="hero">
-        <h1><span>Är du redo för ditt nästa äventyr?</span></h1>
-        <p><span> Hos oss kan du hitta din nästa upplevelse </span></p>
+      <div class="payment-container">
+        <div class="payment-details">
+          <form>
+            <div>
+              <h3>1. Kontaktuppgifter</h3>
+                <label for="input-first-name">Förnamn</label>
+                <input id="input-first-name" type="text" min="2" />
+                <label for="input-last-name">Efternamn</label>
+                <input id="input-last-name" type="text" min="2"/>
+                <label for="input-email">Mailadress</label>
+                <input id="input-email" type="text" />
+              <p>Dina kontaktuppgifter kommer att användas för att leverera ditt köp till din e-post.</p>
+            </div>
+            <div>
+              <h3>2. Betalningsalternativ</h3>
+              <label for="input-card-number">Kortnummer</label>
+              <input id="input-card-number" type="text" />
+              <div>
+                <div>
+                  <label for="input-valid-to">Giltigt till</label>
+                  <input id="input-valid-to" type="text" />
+                </div>
+                <div>
+                  <label for="input-cvv-cvc">CVV/CVC</label>
+                  <input id="input-cvv-cvc" type="text" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="shoppingcart-total">
+          <div class="checkout-container">
+            <p class="totalt-amount">Totalt belopp:</p>
+            <p class="price">1500 kr</p>
+          </div>
+            <button class="purchase-btn" id="purchase-btn">Slutför köp</button>
+          <p>
+            Genom att slutföra köp godkänner jag Upplev Stockholms
+            <a href="/conditions.html#" target="blank">köpvillkor</a>.
+          </p>
+        </div>
       </div>
-      <nav class="main-container">
-        <div class="experience">
-          <a href="experiences.html#culture"
-            ><h2><span>Kultur</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#theater"><span>Teater</span></a>
-            <a href="experiences.html#music"><span>Musik</span></a>
-            <a href="experiences.html#museum"><span>Museum</span></a>
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#gastronomy"
-            ><h2><span>Gastronomi</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#wine-testing"><span>Vinprovning</span></a>
-            <a href="experiences.html#dining"><span>Middagar</span></a>
-            <a href="experiences.html#afternoon-tea"
-              ><span>Afternoon tea</span></a
-            >
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#wellness"
-            ><h2><span>Wellness</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#facials"
-              ><span>Ansiktsbehandlingar</span></a
-            >
-            <a href="experiences.html#massage"><span>Massage</span></a>
-            <a href="experiences.html#yoga-meditation-qigong"
-              ><span>Yoga</span></a
-            >
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#adventure"
-            ><h2><span>Äventyr</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#outdoors"><span>Utomhus</span></a>
-            <a href="experiences.html#indoors"><span>Inomhus</span></a>
-            <a href="experiences.html#family"><span>För familjen</span></a>
-          </div>
-        </div>
-      </nav>
     </main>
     <footer class="footer-container">
       <div class="logo">
@@ -107,7 +97,7 @@
         <i class="fas fa-wind fa-lg"></i>
         <p>Stockholm</p>
       </div>
-      <div class="social-wrapper">
+      <div class="social">
         <ul>
           <a href=""
             ><li class="facebook"><i class="fab fa-facebook fa-lg"></i></li

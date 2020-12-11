@@ -1,40 +1,77 @@
-//SHOPPINGCART STYLING STARTS HERE
-.shoppingcart-items-container,.shoppingcart-total, .payment-details{
-    background-color: #323232;
-    color: white;
-    padding: 0.5rem;
-  }
-  .shoppingcart-container, .payment-container{
-    .shoppingcart-total{
+//SHOPPINGCART & CHECKOUT STYLING STARTS HERE
+.shoppingcart-items-container,
+.shoppingcart-total,
+.payment-details {
+  padding: 1rem;
+}
+.shoppingcart-container,
+.payment-container {
+  flex: 1;
+  color: white;
+  background-color: #323232;
+  form {
+    display: flex;
+    flex-direction: column;
+    div {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        .checkout-container{
-            display: flex;
-            justify-content: space-between;
-            width: 170px;
-        }
-        button{
-            padding: 0.5rem;
-        }
+    }
+    input {
+        height: 2rem;
+        margin-bottom: 0.5rem;
     }
   }
-  
-  // DESKTOP VERSION OF EXPERIENCES
-  @media screen and (min-width: 769px) {
-    .shoppingcart-container, .payment-container{
-        display: flex;
-        .shoppingcart-items-container, .payment-details{
-            width: 70%;
-        }
-        .shoppingcart-total{
-            width: 30%;
-            .checkout-container{
-                display: flex;
-                justify-content: space-between;
-                min-width: 30%;
+  .shoppingcart-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .checkout-container {
+      display: flex;
+      justify-content: space-between;
+      width: 170px;
+    }
+    button {
+      padding: 0.5rem;
+    }
+    a:link, a:visited {
+        color: white;
+    }
+    a:hover {
+        color: gray;
+    }
+  }
+}
+
+// DESKTOP VERSION OF SHOPPINGCART & CHECKOUT
+@media screen and (min-width: 769px) {
+  .shoppingcart-container,
+  .payment-container {
+    display: flex;
+    align-items: center;
+    form {
+        flex-direction: row;
+        justify-content: space-around;
+        div {
+            width: 50%;
+            padding: 5rem;
+            div {
+                width: 100%;
+                padding: 0;
             }
         }
+      }
+    .shoppingcart-items-container,
+    .payment-details {
+      width: 70%;
+    }
+    .shoppingcart-total {
+      width: 30%;
+      .checkout-container {
+        display: flex;
+        justify-content: space-between;
+        min-width: 30%;
+      }
     }
   }
+}
