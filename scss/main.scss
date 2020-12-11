@@ -29,6 +29,16 @@ header {
   text-decoration: none;
   color: black;
   z-index: 3;
+  padding-left:1rem;
+}
+
+// DESKTOP VERSION FOR HEADER
+
+// DESKTOP VERSION FOR MAIN
+@media screen and (min-width: 769px) {
+  .nav-logo{
+    padding-left:5rem;
+  }
 }
 
 // TODO: ska denna vara en egen extend?
