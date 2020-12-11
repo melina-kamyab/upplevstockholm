@@ -1,18 +1,10 @@
 //SHOPPINGCART STYLING STARTS HERE
-*{
-    padding: 0;
-    margin: 0;
-}
-.shoppingcart-items-container,.shoppingcart-total{
-    background-color: white;
-    margin: 0.5rem;
-    height: 7rem;
-}
-.shoppingcart-container{
+.shoppingcart-items-container,.shoppingcart-total, .payment-details{
     background-color: #323232;
-    .shoppingcart-items-container{
-        margin-bottom: 0.5rem;
-    }
+    color: white;
+    padding: 0.5rem;
+  }
+  .shoppingcart-container, .payment-container{
     .shoppingcart-total{
         display: flex;
         flex-direction: column;
@@ -22,20 +14,18 @@
             display: flex;
             justify-content: space-between;
             width: 170px;
-            margin-bottom: 1rem;
         }
         button{
             padding: 0.5rem;
         }
     }
-}
-
-// DESKTOP VERSION OF EXPERIENCES
-@media screen and (min-width: 769px) {
-    .shoppingcart-container{
+  }
+  
+  // DESKTOP VERSION OF EXPERIENCES
+  @media screen and (min-width: 769px) {
+    .shoppingcart-container, .payment-container{
         display: flex;
-        .shoppingcart-items-container{
-            margin-bottom: 0;
+        .shoppingcart-items-container, .payment-details{
             width: 70%;
         }
         .shoppingcart-total{
@@ -44,7 +34,6 @@
                 display: flex;
                 justify-content: space-between;
                 min-width: 30%;
-                margin-bottom: 1rem;
             }
         }
     }
