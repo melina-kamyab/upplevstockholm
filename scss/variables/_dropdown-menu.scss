@@ -1,11 +1,11 @@
 .menu {
-  z-index: 3;
   position: static;
 }
 .menu .navbar {
   clear: both;
   max-height: 0;
   transition: max-height 0.2s ease-out;
+  
 }
 .menu .hamburger {
   width: 39px;
@@ -62,7 +62,7 @@
   margin: 0;
   position: absolute;
   width: 100vw;
-  max-width:100%;
+  max-width: 100%;
   background-color: white;
   padding-top: 10px;
 }
@@ -70,6 +70,7 @@
 @media screen and (min-width: 769px) {
   .menu ul {
     padding-top: 0;
+    background-color: none;
   }
 }
 
