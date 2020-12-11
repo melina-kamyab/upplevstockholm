@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Upplev Stockholm</title>
+    <title>Varukorg</title>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -40,65 +40,25 @@
       <a href="index.html" class="nav-logo"
         ><i class="fas fa-wind"></i> Upplev Stockholm</a
       >
-      <a href="shoppingcart.html"
-        ><div class="cart-icon" data-number-of-items="0">
+      <a href="shoppingcart.html">
+        <div class="cart-icon" data-number-of-items="0">
           <i class="fas fa-shopping-cart fa-2x"></i>
         </div>
       </a>
     </header>
     <main>
-      <div class="hero">
-        <h1><span>Är du redo för ditt nästa äventyr?</span></h1>
-        <p><span> Hos oss kan du hitta din nästa upplevelse </span></p>
+      <div class="shoppingcart-container">
+        <div class="shoppingcart-items-container"></div>
+        <div class="shoppingcart-total">
+          <div class="checkout-container">
+            <p class="total-amount">Totalt belopp:</p>
+            <p class="price">1500 kr</p>
+          </div>
+          <button class="kassa-btn" id="kassa-btn">
+            GODKÄNN OCH SLUTFÖR KÖP
+          </button>
+        </div>
       </div>
-      <nav class="main-container">
-        <div class="experience">
-          <a href="experiences.html#culture"
-            ><h2><span>Kultur</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#theater"><span>Teater</span></a>
-            <a href="experiences.html#music"><span>Musik</span></a>
-            <a href="experiences.html#museum"><span>Museum</span></a>
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#gastronomy"
-            ><h2><span>Gastronomi</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#wine-testing"><span>Vinprovning</span></a>
-            <a href="experiences.html#dining"><span>Middagar</span></a>
-            <a href="experiences.html#afternoon-tea"
-              ><span>Afternoon tea</span></a
-            >
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#wellness"
-            ><h2><span>Wellness</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#facials"
-              ><span>Ansiktsbehandlingar</span></a
-            >
-            <a href="experiences.html#massage"><span>Massage</span></a>
-            <a href="experiences.html#yoga-meditation-qigong"
-              ><span>Yoga</span></a
-            >
-          </div>
-        </div>
-        <div class="experience">
-          <a href="experiences.html#adventure"
-            ><h2><span>Äventyr</span></h2></a
-          >
-          <div>
-            <a href="experiences.html#outdoors"><span>Utomhus</span></a>
-            <a href="experiences.html#indoors"><span>Inomhus</span></a>
-            <a href="experiences.html#family"><span>För familjen</span></a>
-          </div>
-        </div>
-      </nav>
     </main>
     <footer class="footer-container">
       <div class="logo">
@@ -106,7 +66,7 @@
         <i class="fas fa-wind fa-lg"></i>
         <p>Stockholm</p>
       </div>
-      <div class="social-wrapper">
+      <div class="social">
         <ul>
           <a href=""
             ><li class="facebook"><i class="fab fa-facebook fa-lg"></i></li
