@@ -31,6 +31,7 @@ header {
   padding: 15px 20px;
   position: relative;
   color: rgb(50, 50, 50);
+  z-index:10;
   &::after {
     content: attr(data-number-of-items);
     display: block;
