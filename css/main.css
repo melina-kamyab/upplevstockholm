@@ -158,6 +158,27 @@
       display: flex;
       flex-direction: row; } }
 
+.checkout-container {
+  display: flex;
+  background-color: #323232;
+  color: white;
+  padding: 1rem; }
+  .checkout-container .checkout {
+    width: 70%; }
+    .checkout-container .checkout form {
+      display: flex;
+      justify-content: center; }
+      .checkout-container .checkout form div:first-child,
+      .checkout-container .checkout form div:nth-child(2) {
+        padding-right: 1rem;
+        display: flex;
+        flex-direction: column; }
+      .checkout-container .checkout form div:nth-child(2) div {
+        display: flex; }
+
+#input-card-number {
+  width: 23rem; }
+
 * {
   box-sizing: border-box; }
 
