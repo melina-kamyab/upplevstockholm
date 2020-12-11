@@ -153,31 +153,77 @@
       display: flex;
       flex-direction: row; } }
 
-.shoppingcart-items-container, .shoppingcart-total, .payment-details {
-  background-color: #323232;
-  color: white;
-  padding: 0.5rem; }
+.shoppingcart-items-container,
+.shoppingcart-total,
+.payment-details {
+  padding: 1rem; }
 
-.shoppingcart-container .shoppingcart-total, .payment-container .shoppingcart-total {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-  .shoppingcart-container .shoppingcart-total .checkout-container, .payment-container .shoppingcart-total .checkout-container {
+.shoppingcart-container,
+.payment-container {
+  flex: 1;
+  color: white;
+  background-color: #323232; }
+  .shoppingcart-container form,
+  .payment-container form {
     display: flex;
-    justify-content: space-between;
-    width: 170px; }
-  .shoppingcart-container .shoppingcart-total button, .payment-container .shoppingcart-total button {
-    padding: 0.5rem; }
+    flex-direction: column; }
+    .shoppingcart-container form div,
+    .payment-container form div {
+      display: flex;
+      flex-direction: column; }
+    .shoppingcart-container form input,
+    .payment-container form input {
+      height: 2rem;
+      margin-bottom: 0.5rem; }
+  .shoppingcart-container .shoppingcart-total,
+  .payment-container .shoppingcart-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .shoppingcart-container .shoppingcart-total .checkout-container,
+    .payment-container .shoppingcart-total .checkout-container {
+      display: flex;
+      justify-content: space-between;
+      width: 170px; }
+    .shoppingcart-container .shoppingcart-total button,
+    .payment-container .shoppingcart-total button {
+      padding: 0.5rem; }
+    .shoppingcart-container .shoppingcart-total a:link, .shoppingcart-container .shoppingcart-total a:visited,
+    .payment-container .shoppingcart-total a:link,
+    .payment-container .shoppingcart-total a:visited {
+      color: white; }
+    .shoppingcart-container .shoppingcart-total a:hover,
+    .payment-container .shoppingcart-total a:hover {
+      color: gray; }
 
 @media screen and (min-width: 769px) {
-  .shoppingcart-container, .payment-container {
-    display: flex; }
-    .shoppingcart-container .shoppingcart-items-container, .shoppingcart-container .payment-details, .payment-container .shoppingcart-items-container, .payment-container .payment-details {
+  .shoppingcart-container,
+  .payment-container {
+    display: flex;
+    align-items: center; }
+    .shoppingcart-container form,
+    .payment-container form {
+      flex-direction: row;
+      justify-content: space-around; }
+      .shoppingcart-container form div,
+      .payment-container form div {
+        width: 50%;
+        padding: 5rem; }
+        .shoppingcart-container form div div,
+        .payment-container form div div {
+          width: 100%;
+          padding: 0; }
+    .shoppingcart-container .shoppingcart-items-container,
+    .shoppingcart-container .payment-details,
+    .payment-container .shoppingcart-items-container,
+    .payment-container .payment-details {
       width: 70%; }
-    .shoppingcart-container .shoppingcart-total, .payment-container .shoppingcart-total {
+    .shoppingcart-container .shoppingcart-total,
+    .payment-container .shoppingcart-total {
       width: 30%; }
-      .shoppingcart-container .shoppingcart-total .checkout-container, .payment-container .shoppingcart-total .checkout-container {
+      .shoppingcart-container .shoppingcart-total .checkout-container,
+      .payment-container .shoppingcart-total .checkout-container {
         display: flex;
         justify-content: space-between;
         min-width: 30%; } }
@@ -193,6 +239,7 @@ html {
 body {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0; }
@@ -246,10 +293,15 @@ header {
   justify-content: space-evenly;
   border: none; }
 
+main {
+  height: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column; }
+
 .main-container {
   display: flex;
-  flex-direction: column;
-  position: static; }
+  flex-direction: column; }
 
 main h1,
 main h2,
@@ -277,7 +329,8 @@ main .image {
 footer {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin-top: auto; }
   footer div {
     width: 100%;
     display: flex;

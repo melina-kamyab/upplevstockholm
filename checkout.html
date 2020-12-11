@@ -10,6 +10,7 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    <script src="js/experiences.js"></script>
     <script src="js/main.js"></script>
 
     <link rel="stylesheet" href="css/main.css" />
@@ -37,7 +38,9 @@
           <li><a href="experiences.html">Om</a></li>
         </ul>
       </div>
-      <div><i class="fas fa-wind"></i> Upplev Stockholm</div>
+      <a href="index.html" class="nav-logo"
+        ><i class="fas fa-wind"></i> Upplev Stockholm</a
+      >
       <a href="shoppingcart.html"
         ><div class="cart-icon" data-number-of-items="0">
           <i class="fas fa-shopping-cart fa-2x"></i>
@@ -49,16 +52,17 @@
         <div class="payment-details">
           <form>
             <div>
-              <h3>Kontaktuppgifter</h3>
-              <label for="input-first-name">Förnamn</label>
-              <input id="input-first-name" type="text" />
-              <label for="input-last-name">Efternamn</label>
-              <input id="input-last-name" type="text" />
-              <label for="input-email">Mailadress</label>
-              <input id="input-email" type="text" />
+              <h3>1. Kontaktuppgifter</h3>
+                <label for="input-first-name">Förnamn</label>
+                <input id="input-first-name" type="text" min="2" />
+                <label for="input-last-name">Efternamn</label>
+                <input id="input-last-name" type="text" min="2"/>
+                <label for="input-email">Mailadress</label>
+                <input id="input-email" type="text" />
+              <p>Dina kontaktuppgifter kommer att användas för att leverera ditt köp till din e-post.</p>
             </div>
             <div>
-              <h3>Betalningsalternativ</h3>
+              <h3>2. Betalningsalternativ</h3>
               <label for="input-card-number">Kortnummer</label>
               <input id="input-card-number" type="text" />
               <div>
@@ -79,9 +83,11 @@
             <p class="totalt-amount">Totalt belopp:</p>
             <p class="price">1500 kr</p>
           </div>
-          <button class="kassa-btn" id="kassa-btn">
-            GODKÄNN OCH SLUTFÖR KÖP
-          </button>
+            <button class="purchase-btn" id="purchase-btn">Slutför köp</button>
+          <p>
+            Genom att slutföra köp godkänner jag Upplev Stockholms
+            <a href="/conditions.html#" target="blank">köpvillkor</a>.
+          </p>
         </div>
       </div>
     </main>
@@ -93,9 +99,15 @@
       </div>
       <div class="social">
         <ul>
-          <li class="facebook"><i class="fab fa-facebook fa-lg"></i></li>
-          <li class="instagram"><i class="fab fa-instagram fa-lg"></i></li>
-          <li class="youtube"><i class="fab fa-youtube fa-lg"></i></li>
+          <a href=""
+            ><li class="facebook"><i class="fab fa-facebook fa-lg"></i></li
+          ></a>
+          <a href=""
+            ><li class="instagram"><i class="fab fa-instagram fa-lg"></i></li
+          ></a>
+          <a href=""
+            ><li class="youtube"><i class="fab fa-youtube fa-lg"></i></li
+          ></a>
         </ul>
       </div>
       <div class="footer-payment">
