@@ -52,6 +52,9 @@ header {
     text-decoration: none;
     color: rgb(50, 50, 50);
   }
+}
+
+.cart-items {
   &::after {
     content: attr(data-number-of-items);
     display: block;
