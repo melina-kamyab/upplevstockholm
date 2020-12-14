@@ -20,6 +20,7 @@ $(function () {
     createHTML();
   }
 });
+
 function createHTML() {
   $.each(listOfExperience, (i, experience) => {
     let container = $("<div>")
@@ -32,7 +33,7 @@ function createHTML() {
       .addClass("image")
       .appendTo(container);
     $("<p>").text(experience.Description).appendTo(container);
-    $("<p>").text(experience.Price).appendTo(container);
+    $("<p>").text(experience.Price).appendTo(container).text(" kr");
   });
 }
 
