@@ -46,10 +46,7 @@ function createExperiencesHTML() {
       .appendTo(container)
       .on("click", function () {
         //Lägger till klicklyssnare per knapp som skapas
-        addToCart(
-          experience,
-          $(this).closest("div").attr("id")
-        );
+        addToCart(experience, $(this).closest("div").attr("id"));
       });
   });
 }
@@ -94,25 +91,25 @@ function validateForm() {
 }
 
 function addToCart(experienceItem, productId) {
-  //Nr.6 i To do
+  //Nr.5 i To do
   let existsInCart = false; //Flagga för att se om upplevelsen redan finns i varukorgen
   if (sessionStorage.getItem("cart") !== null) {
+    //Om det finns några varor i sessionstorage så ska vår tomma lista (cartItems) ersättas med det som finns i sessionStorage
     cartItems = JSON.parse(sessionStorage.getItem("cart"));
   }
 
   $.each(cartItems, (i, cartItem) => {
     //Går igenom varukorgen och kollar ifall samma produkt redan finns i varukorgen
     if (cartItem.experienceItem.Id === parseInt(productId)) {
-      //Om det finns i varukorgen redan utökar vi istället det befintliga objektets amount med +1 och ändrar vår flagga (existsInCart) till true eftersom det fanns i varukorgen redan
+      //Om det finns i varukorgen adderar vi istället det befintliga objektets amount med +1 och ändrar vår flagga (existsInCart) till true eftersom det fanns i varukorgen redan
       cartItem.amount++;
       existsInCart = true;
     }
   });
 
   if (existsInCart === false) {
-    //Om produkten inte redan fanns i varukorgen, skapar vi och lägger till newCartObject till varukorgen.
+    //Om produkten inte redan fanns i varukorgen, skapar vi istället ett nytt objekt som innehåller Experience objektet + en ny egenskap amount för att hålla redan på antal. Detta nya objekt läggs till i varukorgen.
     let newCartObject = {
-      //Nytt objekt skapas upp
       experienceItem,
       amount: 1,
     };
@@ -120,24 +117,30 @@ function addToCart(experienceItem, productId) {
   }
 
   sessionStorage.setItem("cart", JSON.stringify(cartItems)); //Pushar upp den uppdaterade varukorgen till sessionStorage
-  changeCartIconNumber(); //Anropar funktion för att ändra siffran på varukorgen
+  changeCartIconNumber(); //Anropar funktion för att ändra siffran på varukorgen uppe till höger på hemsidan
 }
 
 function changeCartIconNumber() {
-  //Nr. 9 i To do
+  //Nr. 8 i To do
   let totalAmount = 0;
 
   if (sessionStorage.getItem("cart") !== null) {
+    //Om det finns några varor i sessionstorage så ska vår tomma lista (cartItems) ersättas med det som finns i sessionStorage
     cartItems = JSON.parse(sessionStorage.getItem("cart"));
   }
 
   $.each(cartItems, (i, cartItem) => {
+    //För varje objekt i listan vill vi nu addera det amount objektet har i varukorgen till vår variabel totalAmount. För varje gång loopen körs kommer totalAmount att växa
     totalAmount += cartItem.amount;
   });
 
-  if ($(".cart-icon").hasClass("cart-items") === false && sessionStorage.getItem("cart") !== null) {
+  if (
+    $(".cart-icon").hasClass("cart-items") === false &&
+    sessionStorage.getItem("cart") !== null
+  ) {
+    //Om klassen .cart-items inte finns på .cart-icon vill vi lägga till den klassen så att siffran för antalet varor syns
     $(".cart-icon").addClass("cart-items");
-  } 
+  }
 
-  $(".cart-icon").attr("data-number-of-items", totalAmount);
+  $(".cart-icon").attr("data-number-of-items", totalAmount); //Vi sätter den totala siffran från totalAmount på ikonen uppe till höger på hemsidan
 }
