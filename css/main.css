@@ -139,6 +139,11 @@
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .culture h4,
+  .gastronomy h4,
+  .wellness h4,
+  .adventure h4 {
+    padding-top: 1rem; }
   .culture .item-container,
   .gastronomy .item-container,
   .wellness .item-container,
@@ -334,21 +339,22 @@ header {
   .cart-icon a {
     text-decoration: none;
     color: #323232; }
-  .cart-icon::after {
-    content: attr(data-number-of-items);
-    display: block;
-    position: absolute;
-    background-color: red;
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 50%;
-    color: white;
-    font-size: 10px;
-    bottom: 10px;
-    right: 10px;
-    border: 1px solid white; }
+
+.cart-items::after {
+  content: attr(data-number-of-items);
+  display: block;
+  position: absolute;
+  background-color: red;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid white; }
 
 .hero {
   font-weight: bold;
