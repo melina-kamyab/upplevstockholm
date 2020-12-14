@@ -33,7 +33,8 @@ function createHTML() {
       .addClass("image")
       .appendTo(container);
     $("<p>").text(experience.Description).appendTo(container);
-    $("<p>").text(experience.Price).appendTo(container).text(" kr");
+    $("<p>").text(experience.Price + " kr").appendTo(container);
+    $("<button>").attr("type", "button").attr("class", "buy-btn").text("Köp").appendTo(container);
   });
 }
 

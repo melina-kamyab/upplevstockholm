@@ -23,7 +23,7 @@ class Experience {
     new Experience(9,"Culture","Music","./assets/experiences/9.agnescarlsson.jpg","Agnes Carlsson på Tele 2 arenan","Description",350),
 
     //********* Food Experiances - Objects **********//
-    new Experience(10,"Food Experiences","Dinner","./assets/experiences/10.indiskmat.jpg","Indisk trerätters middag inkl. ett glas öl eller vin","Description",450),
+    new Experience(10,"Food Experiences","Dinner","./assets/experiences/10.indiskmat.jpg","Indisk trerätters middag inkl. ett glas öl/vin","Description",450),
     new Experience(11,"Food Experiences","Dinner","./assets/experiences/11.grandhotelmat.jpg","3-rätters middag för 2 pers på Grand Hotel","Description",1100),
     new Experience(12,"Food Experiences","Dinner","./assets/experiences/12.thai.jpg","Thailändsk trerätters","Description",500),
     new Experience(13,"Food Experiences","afternoon-tea","./assets/experiences/13.afternoonhamlet.jpg","Afternoon tea för två pers - Hamilton Hotel","Description",450),
@@ -41,7 +41,7 @@ class Experience {
     new Experience(23,"adventure","indoors","./assets/experiences/23.padel.jpg","Padel","Description",250),
     new Experience(24,"adventure","indoors","./assets/experiences/24.biomiddag.jpg","Bio med middag för två","Description",700),
     new Experience(25,"adventure","family","./assets/experiences/25.fjarilshuset.jpg","Fjärilshuset","Description",150),
-    new Experience(26,"adventure","family","./assets/experiences/26.gronalund.jpg","Grönalund inc åkband & entre för 4 pers"),
+    new Experience(26,"adventure","family","./assets/experiences/26.gronalund.jpg","Grönalund inc åkband & entre för 4 pers","Description",500),
     new Experience(27,"adventure","family","./assets/experiences/27.luftballong.jpg","Flyga luftballong","Description",1000),
 
     //********* Wellness - Objects **********//
@@ -52,6 +52,6 @@ class Experience {
     new Experience(32,"Wellness","massage","./assets/experiences/32.algmassage.jpg","Alginpackning inkl massage 30 min - Sparadiset","Description",500),
     new Experience(33,"Wellness","massage","./assets/experiences/33.gravidmassage.jpg","Gravidmassage - Sturebadet","Description",550),
     new Experience(34,"Wellness","yoga-meditation-qigong","./assets/experiences/34.yogayama.png","Klippkort 5 ggr - Yogayama Östermalm","Description",2000),
-    new Experience(35,"Wellness","yoga-meditation-qigong","./assets/experiences/35.meditation.jpg","Klippkort 5 ggr - Kadampa meditationscenter Stockholm","Description",2000),
+    new Experience(35,"Wellness","yoga-meditation-qigong","./assets/experiences/35.meditation.jpg","Klippkort 5 ggr - Stockholm Zen Center","Description",2000),
     new Experience(36,"Wellness","yoga-meditation-qigong","./assets/experiences/36.qigong.jpg","Qihealing på Qigongcenter Stockholm","Description",500)
  ];
