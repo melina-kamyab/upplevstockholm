@@ -161,20 +161,17 @@ function createHtmlforCart() {
       .attr("src", item.experienceItem.Image)
       .addClass("image")
       .appendTo(container);
-    $("<p>")
-      .text(item.experienceItem.Price + " kr")
-      .appendTo(container);
     $("<p>").text(item.amount).appendTo(container);
     $("<button>")
-      .addClass("increase-item-amount")
-      .text("+")
+      .addClass("decrease-item-amount")
+      .text("-")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
     $("<button>")
-      .addClass("decrease-item-amount")
-      .text("-")
+      .text("+")
+      .addClass("increase-item-amount")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
@@ -186,11 +183,11 @@ function createHtmlforCart() {
 
     $("<p>")
       .addClass(".total-price-per-item")
-      .text(totalAmountPerItem)
+      .text(totalAmountPerItem + " kr")
       .appendTo(container);
 
     sumOfAllExperiences += totalAmountPerItem;
-    $(".price").text(sumOfAllExperiences);
+    $(".price").text(sumOfAllExperiences + " kr");
 
     // if (itemAmount < 1) {
     //   //Ta bort upplevelsen
