@@ -163,15 +163,13 @@ function createHtmlforCart() {
       .appendTo(container);
     $("<p>").text(item.amount).appendTo(container);
     $("<button>")
-      .addClass("decrease-item-amount")
-      .text("-")
+      .addClass("decrease-item-amount, fas fa-minus")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
     $("<button>")
-      .text("+")
-      .addClass("increase-item-amount")
+      .addClass("increase-item-amount, , fas fa-plus")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
