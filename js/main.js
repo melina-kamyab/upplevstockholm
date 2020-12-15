@@ -1,5 +1,6 @@
 //const {Console} = require("console");
 let cartItems = [];
+let sumOfAllExperiences = 0;
 
 $(function () {
   changeCartIconNumber();
@@ -9,6 +10,7 @@ $(function () {
     $("#checkout-btn").on("click", () => {
       window.open("checkout.html", "_self");
     });
+    createHtmlforCart();
   }
 
   // Lyssnare sätts på knapp checkout-btn om vi befinner oss på checkout.html
@@ -143,4 +145,57 @@ function changeCartIconNumber() {
   }
 
   $(".cart-icon").attr("data-number-of-items", totalAmount); //Vi sätter den totala siffran från totalAmount på ikonen uppe till höger på hemsidan
+}
+
+function createHtmlforCart() {
+  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+
+  $.each(itemsInCart, (i, item) => {
+    let container = $("<div>")
+      .addClass("item-container")
+      .attr("id", item.experienceItem.Id)
+      .appendTo($(".shoppingcart-items-container"));
+
+    $("<h5>").text(item.experienceItem.Title).appendTo(container);
+    $("<img>")
+      .attr("src", item.experienceItem.Image)
+      .addClass("image")
+      .appendTo(container);
+    $("<p>").text(item.amount).appendTo(container);
+    $("<button>")
+      .addClass("decrease-item-amount")
+      .text("-")
+      .appendTo(container)
+      .on("click", () => {
+        changeAmountOfItemsInShoppingcart();
+      });
+    $("<button>")
+      .text("+")
+      .addClass("increase-item-amount")
+      .appendTo(container)
+      .on("click", () => {
+        changeAmountOfItemsInShoppingcart();
+      });
+
+    let itemAmount = parseInt(item.amount);
+    let itemPrice = parseInt(item.experienceItem.Price);
+    let totalAmountPerItem = itemAmount * itemPrice;
+
+    $("<p>")
+      .addClass(".total-price-per-item")
+      .text(totalAmountPerItem + " kr")
+      .appendTo(container);
+
+    sumOfAllExperiences += totalAmountPerItem;
+    $(".price").text(sumOfAllExperiences + " kr");
+
+    // if (itemAmount < 1) {
+    //   //Ta bort upplevelsen
+    // }
+  });
+}
+
+//Till Marvin
+function changeAmountOfItemsInShoppingcart() {
+  console.log("till Marvin");
 }
