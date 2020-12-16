@@ -185,12 +185,11 @@ function createHtmlforCart() {
       .appendTo(container);
 
     sumOfAllExperiences += totalAmountPerItem;
-    $(".price").text(sumOfAllExperiences + " kr");
-
     // if (itemAmount < 1) {
     //   //Ta bort upplevelsen
     // }
   });
+  $(".price").text(sumOfAllExperiences + " kr");
 }
 
 //Till Marvin
