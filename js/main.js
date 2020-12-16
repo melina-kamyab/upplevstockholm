@@ -23,6 +23,11 @@ $(function () {
     //Kör createHTML om vi är på experiences.html
     createExperiencesHTML();
   }
+
+  if (window.location.pathname === "/thankspage.html") {
+    //Kör createHTML om vi är på experiences.html
+    removeItemsFromCart();
+  }
 });
 
 function createExperiencesHTML() {
@@ -133,7 +138,11 @@ function changeCartIconNumber() {
 
   $.each(cartItems, (i, cartItem) => {
     //För varje objekt i listan vill vi nu addera det amount objektet har i varukorgen till vår variabel totalAmount. För varje gång loopen körs kommer totalAmount att växa
-    totalAmount += cartItem.amount;
+    if (cartItem === null) {
+      totalAmount = 0;
+    } else {
+      totalAmount += cartItem.amount;
+    }
   });
 
   if (
@@ -142,6 +151,10 @@ function changeCartIconNumber() {
   ) {
     //Om klassen .cart-items inte finns på .cart-icon vill vi lägga till den klassen så att siffran för antalet varor syns
     $(".cart-icon").addClass("cart-items");
+  } 
+  
+  if (sessionStorage.getItem("cart") === null) {
+    $(".cart-icon").removeClass("cart-items");
   }
 
   $(".cart-icon").attr("data-number-of-items", totalAmount); //Vi sätter den totala siffran från totalAmount på ikonen uppe till höger på hemsidan
@@ -195,4 +208,10 @@ function createHtmlforCart() {
 //Till Marvin
 function changeAmountOfItemsInShoppingcart() {
   console.log("till Marvin");
+}
+
+function removeItemsFromCart() {
+  sessionStorage.removeItem("cart");
+  cartItems = [];
+  changeCartIconNumber();
 }
