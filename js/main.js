@@ -18,6 +18,7 @@ $(function () {
     $("#purchase-btn").on("click", () => {
       validateForm();
     });
+    writeOutTotalPrice();
   }
   if (window.location.pathname === "/experiences.html") {
     //Kör createHTML om vi är på experiences.html
@@ -169,7 +170,7 @@ function createHtmlforCart() {
         changeAmountOfItemsInShoppingcart();
       });
     $("<button>")
-      .addClass("increase-item-amount, , fas fa-plus")
+      .addClass("increase-item-amount, fas fa-plus")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
@@ -189,6 +190,9 @@ function createHtmlforCart() {
     //   //Ta bort upplevelsen
     // }
   });
+  writeOutTotalPrice();
+}
+function writeOutTotalPrice() {
   $(".price").text(sumOfAllExperiences + " kr");
 }
 
