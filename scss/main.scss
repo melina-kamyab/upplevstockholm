@@ -26,18 +26,18 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.nav-logo{
+.nav-logo {
   text-decoration: none;
   color: black;
   z-index: 3;
-  padding-left:1rem;
+  padding-left: 1rem;
 }
 
 // DESKTOP VERSION FOR HEADER
 
 @media screen and (min-width: 769px) {
-  .nav-logo{
-    padding-left:5rem;
+  .nav-logo {
+    padding-left: 5rem;
   }
 }
 
@@ -48,7 +48,7 @@ header {
   padding: 15px 20px;
   position: relative;
   color: rgb(50, 50, 50);
-  a{
+  a {
     text-decoration: none;
     color: rgb(50, 50, 50);
   }
@@ -107,6 +107,10 @@ main {
   span {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
+  }
+  .thank-you-message span {
+    background-color: #323232;
+    padding: 0;
   }
 
   .image {
@@ -167,7 +171,7 @@ footer {
     color: grey;
   }
   ul {
-    a{
+    a {
       text-decoration: none;
       color: black;
     }
@@ -209,7 +213,7 @@ footer {
 
   .footer-payment,
   ul {
-    a{
+    a {
       text-decoration: none;
       color: black;
     }
