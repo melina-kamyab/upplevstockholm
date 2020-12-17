@@ -162,21 +162,25 @@ function createHtmlforCart() {
       .attr("id", item.experienceItem.Id)
       .appendTo($(".shoppingcart-items-container"));
 
+    let detailsContainer = $("<div>")
+      .addClass("details-container")
+      .appendTo($(".shoppingcart-items-container"));
+
     $("<h5>").text(item.experienceItem.Title).appendTo(container);
     $("<img>")
       .attr("src", item.experienceItem.Image)
       .addClass("image")
       .appendTo(container);
-    $("<p>").text(item.amount).appendTo(container);
+    $("<p>").text(item.amount).appendTo(detailsContainer);
     $("<button>")
       .addClass("decrease-item-amount, fas fa-minus")
-      .appendTo(container)
+      .appendTo(detailsContainer)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
     $("<button>")
       .addClass("increase-item-amount, fas fa-plus")
-      .appendTo(container)
+      .appendTo(detailsContainer)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
@@ -187,7 +191,7 @@ function createHtmlforCart() {
     $("<p>")
       .addClass(".total-price-per-item")
       .text(totalAmountPerItem + " kr")
-      .appendTo(container);
+      .appendTo(detailsContainer);
 
     calculateTotalSum(item);
   });
