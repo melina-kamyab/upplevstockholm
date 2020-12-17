@@ -183,27 +183,54 @@ function createHtmlforCart() {
         .attr("id", item.experienceItem.Id)
         .appendTo($(".shoppingcart-items-container"));
 
+        $("<h5>").text(item.experienceItem.Title).appendTo(container);
+        $("<img>")
+          .attr("src", item.experienceItem.Image)
+          .addClass("image")
+          .appendTo(container);
       let detailsContainer = $("<div>")
         .addClass("details-container")
-        .appendTo($(".shoppingcart-items-container"));
-
-      $("<h5>").text(item.experienceItem.Title).appendTo(container);
-      $("<img>")
-        .attr("src", item.experienceItem.Image)
-        .addClass("image")
-        .appendTo(container);
+        .appendTo($("#"+item.experienceItem.Id));
         $("<button>")
         .addClass("decrease-item-amount, fas fa-minus")
         .appendTo(detailsContainer)
-        .on("click", () => {
-          changeAmountOfItemsInShoppingcart();
+        .on("click", function(){
+          if ( item.amount <= 1){
+            $(this).attr('disabled',true);
+          }
+          itemTotalCost = 0;
+          console.log('My amount is decreasing to:');
+          item.amount--;
+          // $('.show-Amount').attr('value',item.amount);
+          console.log(item.amount);
+          console.log(itemsInCart);
+          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          changeCartIconNumber();
+          calculateTotalSum(item);
+          $('.total-price-per-item').text(itemTotalCost + " kr");
+          $(".price").text(sumOfAllExperiences + " kr");
         });
-      $("<input>").attr('value',item.amount).attr('type','number').appendTo(detailsContainer);
+      $("<input>")
+      .addClass("show-Amount")
+      .attr('value',item.amount)
+      .attr('type','number')
+      .appendTo(detailsContainer);
+
       $("<button>")
         .addClass("increase-item-amount, fas fa-plus")
         .appendTo(detailsContainer)
-        .on("click", () => {
-          changeAmountOfItemsInShoppingcart();
+        .on("click", function () {
+          itemTotalCost = 0;
+          console.log('I am Increasing to:');
+          item.amount++;
+          // $('.show-Amount').attr('value',item.amount);
+          console.log(item.amount);
+          console.log(itemsInCart);
+          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          changeCartIconNumber();
+          calculateTotalSum(item);
+          $('.total-price-per-item').text(itemTotalCost + " kr");
+          $(".price").text(sumOfAllExperiences + " kr");
         });
 
       $("<p>")
@@ -231,10 +258,10 @@ function createHtmlforCheckout() {
 }
 
 //Till Marvin
-function changeAmountOfItemsInShoppingcart() {
-  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
-  console.log(itemsInCart);
-}
+// function changeAmountOfItemsInShoppingcart() {
+//   let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+//   console.log(itemsInCart);
+// }
 
 function generateOrderNumber() {
   $("#ordernumber").text(
