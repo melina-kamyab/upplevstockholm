@@ -201,14 +201,16 @@ function createHtmlforCart() {
           itemTotalCost = 0;
           console.log('My amount is decreasing to:');
           item.amount--;
-          // $('.show-Amount').attr('value',item.amount);
+          $('.show-Amount').attr('value',item.amount);
           console.log(item.amount);
           console.log(itemsInCart);
           sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
           changeCartIconNumber();
-          calculateTotalSum(item);
-          $('.total-price-per-item').text(itemTotalCost + " kr");
+          // calculateTotalSum(item);
+          $('.total-price-per-item').text(item.amount);
+          window.location.reload();
           $(".price").text(sumOfAllExperiences + " kr");
+          console.log(itemTotalCost);
         });
       $("<input>")
       .addClass("show-Amount")
@@ -223,13 +225,14 @@ function createHtmlforCart() {
           itemTotalCost = 0;
           console.log('I am Increasing to:');
           item.amount++;
-          // $('.show-Amount').attr('value',item.amount);
+          $('.show-Amount').attr('value',item.amount);
           console.log(item.amount);
           console.log(itemsInCart);
           sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
           changeCartIconNumber();
           calculateTotalSum(item);
           $('.total-price-per-item').text(itemTotalCost + " kr");
+          window.location.reload();
           $(".price").text(sumOfAllExperiences + " kr");
         });
 
