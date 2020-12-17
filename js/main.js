@@ -180,7 +180,7 @@ function createHtmlforCart() {
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
-    let itemAmount = parseInt(itemsInCart.amount);
+    let itemAmount = parseInt(item.amount);
     let itemPrice = parseInt(item.experienceItem.Price);
     let totalAmountPerItem = itemAmount * itemPrice;
 
