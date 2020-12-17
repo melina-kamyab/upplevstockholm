@@ -168,13 +168,15 @@ function changeCartIconNumber() {
 }
 
 function createHtmlforCart() {
+  // försök med att tömma all i denna function
   let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
 
   if (itemsInCart === null) {
     $("<p>").text("Varukorgen är tom.").appendTo(".shoppingcart-items-container");
     $(".price").text(sumOfAllExperiences + " kr");
     $(".checkout-btn").attr("disabled", true);
-  } else {
+  } 
+  else {
     $.each(itemsInCart, (i, item) => {
       calculateTotalSum(item);
 
@@ -205,10 +207,12 @@ function createHtmlforCart() {
           console.log(item.amount);
           console.log(itemsInCart);
           sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          JSON.parse(sessionStorage.getItem("cart"));
+          createHtmlforCart()
           changeCartIconNumber();
-          // calculateTotalSum(item);
+          calculateTotalSum(item);
           $('.total-price-per-item').text(item.amount);
-          window.location.reload();
+          // window.location.reload();
           $(".price").text(sumOfAllExperiences + " kr");
           console.log(itemTotalCost);
         });
@@ -232,7 +236,7 @@ function createHtmlforCart() {
           changeCartIconNumber();
           calculateTotalSum(item);
           $('.total-price-per-item').text(itemTotalCost + " kr");
-          window.location.reload();
+          // window.location.reload();
           $(".price").text(sumOfAllExperiences + " kr");
         });
 
