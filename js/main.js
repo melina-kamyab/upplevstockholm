@@ -1,13 +1,14 @@
 //const {Console} = require("console");
 let cartItems = [];
 let sumOfAllExperiences = 0;
+let itemTotalCost = 0;
 
 $(function () {
   changeCartIconNumber();
 
   // Lyssnare sätts på knapp checkout-btn om vi befinner oss på shoppingcart.html
   if (window.location.pathname === "/shoppingcart.html") {
-    $("#checkout-btn").on("click", () => {
+    $(".checkout-btn").on("click", () => {
       window.open("checkout.html", "_self");
     });
     createHtmlforCart();
@@ -28,6 +29,11 @@ $(function () {
 
   if (window.location.pathname === "/thankspage.html") {
     generateOrderNumber();
+  }
+
+  if (window.location.pathname === "/thankspage.html") {
+    //Kör createHTML om vi är på experiences.html
+    removeItemsFromCart();
   }
 });
 
@@ -139,7 +145,11 @@ function changeCartIconNumber() {
 
   $.each(cartItems, (i, cartItem) => {
     //För varje objekt i listan vill vi nu addera det amount objektet har i varukorgen till vår variabel totalAmount. För varje gång loopen körs kommer totalAmount att växa
-    totalAmount += cartItem.amount;
+    if (cartItem === null) {
+      totalAmount = 0;
+    } else {
+      totalAmount += cartItem.amount;
+    }
   });
 
   if (
@@ -150,60 +160,65 @@ function changeCartIconNumber() {
     $(".cart-icon").addClass("cart-items");
   }
 
+  if (sessionStorage.getItem("cart") === null) {
+    $(".cart-icon").removeClass("cart-items");
+  }
+
   $(".cart-icon").attr("data-number-of-items", totalAmount); //Vi sätter den totala siffran från totalAmount på ikonen uppe till höger på hemsidan
 }
 
 function createHtmlforCart() {
   let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
 
-  $.each(itemsInCart, (i, item) => {
-    let container = $("<div>")
-      .addClass("item-container")
-      .attr("id", item.experienceItem.Id)
-      .appendTo($(".shoppingcart-items-container"));
+  if (itemsInCart === null) {
+    $("<p>").text("Varukorgen är tom.").appendTo(".shoppingcart-items-container");
+    $(".price").text(sumOfAllExperiences + " kr");
+    $(".checkout-btn").attr("disabled", true);
+  } else {
+    $.each(itemsInCart, (i, item) => {
+      calculateTotalSum(item);
 
-    let detailsContainer = $("<div>")
-      .addClass("details-container")
-      .appendTo($(".shoppingcart-items-container"));
+      let container = $("<div>")
+        .addClass("item-container")
+        .attr("id", item.experienceItem.Id)
+        .appendTo($(".shoppingcart-items-container"));
 
-    $("<h5>").text(item.experienceItem.Title).appendTo(container);
-    $("<img>")
-      .attr("src", item.experienceItem.Image)
-      .addClass("image")
-      .appendTo(container);
-    $("<p>").text(item.amount).appendTo(detailsContainer);
-    $("<button>")
-      .addClass("decrease-item-amount, fas fa-minus")
-      .appendTo(detailsContainer)
-      .on("click", () => {
-        changeAmountOfItemsInShoppingcart();
-      });
-    $("<button>")
-      .addClass("increase-item-amount, fas fa-plus")
-      .appendTo(detailsContainer)
-      .on("click", () => {
-        changeAmountOfItemsInShoppingcart();
-      });
-    let itemAmount = parseInt(item.amount);
-    let itemPrice = parseInt(item.experienceItem.Price);
-    let totalAmountPerItem = itemAmount * itemPrice;
+      let detailsContainer = $("<div>")
+        .addClass("details-container")
+        .appendTo($(".shoppingcart-items-container"));
 
-    $("<p>")
-      .addClass(".total-price-per-item")
-      .text(totalAmountPerItem + " kr")
-      .appendTo(detailsContainer);
+      $("<h5>").text(item.experienceItem.Title).appendTo(container);
+      $("<img>")
+        .attr("src", item.experienceItem.Image)
+        .addClass("image")
+        .appendTo(container);
+        $("<button>")
+        .addClass("decrease-item-amount, fas fa-minus")
+        .appendTo(detailsContainer)
+        .on("click", () => {
+          changeAmountOfItemsInShoppingcart();
+        });
+      $("<input>").attr('value',item.amount).attr('type','number').appendTo(detailsContainer);
+      $("<button>")
+        .addClass("increase-item-amount, fas fa-plus")
+        .appendTo(detailsContainer)
+        .on("click", () => {
+          changeAmountOfItemsInShoppingcart();
+        });
 
-    calculateTotalSum(item);
-  });
-  $(".price").text(sumOfAllExperiences + " kr");
+      $("<p>")
+        .addClass(".total-price-per-item")
+        .text(itemTotalCost + " kr")
+        .appendTo(detailsContainer);
+
+    });
+    $(".price").text(sumOfAllExperiences + " kr");
+  }
 }
 
-function calculateTotalSum(cartItem) {
-  let itemAmount = parseInt(cartItem.amount);
-  let itemPrice = parseInt(cartItem.experienceItem.Price);
-  let totalAmountPerItem = itemAmount * itemPrice;
-
-  sumOfAllExperiences += totalAmountPerItem;
+function calculateTotalSum(item) {
+  itemTotalCost = parseInt(item.amount) * parseInt(item.experienceItem.Price);
+  sumOfAllExperiences += itemTotalCost;
 }
 
 function createHtmlforCheckout() {
@@ -217,7 +232,8 @@ function createHtmlforCheckout() {
 
 //Till Marvin
 function changeAmountOfItemsInShoppingcart() {
-  console.log("till Marvin");
+  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+  console.log(itemsInCart);
 }
 
 function generateOrderNumber() {
@@ -226,4 +242,10 @@ function generateOrderNumber() {
       Math.floor(Math.random() * (1000 - 800) + 800) +
       ". Spara detta nummer och ange det när du ska använda din upplevelse!"
   );
+}
+
+function removeItemsFromCart() {
+  sessionStorage.removeItem("cart");
+  cartItems = [];
+  changeCartIconNumber();
 }
