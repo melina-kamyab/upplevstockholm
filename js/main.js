@@ -192,13 +192,13 @@ function createHtmlforCart() {
         .attr("src", item.experienceItem.Image)
         .addClass("image")
         .appendTo(container);
-      $("<p>").text(item.amount).appendTo(detailsContainer);
-      $("<button>")
+        $("<button>")
         .addClass("decrease-item-amount, fas fa-minus")
         .appendTo(detailsContainer)
         .on("click", () => {
           changeAmountOfItemsInShoppingcart();
         });
+      $("<input>").attr('value',item.amount).attr('type','number').appendTo(detailsContainer);
       $("<button>")
         .addClass("increase-item-amount, fas fa-plus")
         .appendTo(detailsContainer)
@@ -232,7 +232,9 @@ function createHtmlforCheckout() {
 
 //Till Marvin
 function changeAmountOfItemsInShoppingcart() {
-  console.log("till Marvin");
+  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+  
+  console.log(itemsInCart);
 }
 
 function generateOrderNumber() {
