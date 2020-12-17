@@ -157,8 +157,8 @@ function changeCartIconNumber() {
   ) {
     //Om klassen .cart-items inte finns på .cart-icon vill vi lägga till den klassen så att siffran för antalet varor syns
     $(".cart-icon").addClass("cart-items");
-  } 
-  
+  }
+
   if (sessionStorage.getItem("cart") === null) {
     $(".cart-icon").removeClass("cart-items");
   }
@@ -235,10 +235,10 @@ function generateOrderNumber() {
       Math.floor(Math.random() * (1000 - 800) + 800) +
       ". Spara detta nummer och ange det när du ska använda din upplevelse!"
   );
+}
 
 function removeItemsFromCart() {
   sessionStorage.removeItem("cart");
   cartItems = [];
   changeCartIconNumber();
-
 }
