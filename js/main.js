@@ -233,7 +233,6 @@ function createHtmlforCheckout() {
 //Till Marvin
 function changeAmountOfItemsInShoppingcart() {
   let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
-  
   console.log(itemsInCart);
 }
 
