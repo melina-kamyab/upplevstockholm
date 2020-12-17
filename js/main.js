@@ -18,10 +18,16 @@ $(function () {
     $("#purchase-btn").on("click", () => {
       validateForm();
     });
+    createHtmlforCheckout();
   }
+
   if (window.location.pathname === "/experiences.html") {
     //Kör createHTML om vi är på experiences.html
-    createExperiencesHTML();
+    createHtmlForExperiencesPage();
+  }
+
+  if (window.location.pathname === "/thankspage.html") {
+    generateOrderNumber();
   }
 
   if (window.location.pathname === "/thankspage.html") {
@@ -30,7 +36,7 @@ $(function () {
   }
 });
 
-function createExperiencesHTML() {
+function createHtmlForExperiencesPage() {
   $.each(listOfExperience, (i, experience) => {
     let container = $("<div>")
       .addClass("item-container")
@@ -182,12 +188,11 @@ function createHtmlforCart() {
         changeAmountOfItemsInShoppingcart();
       });
     $("<button>")
-      .addClass("increase-item-amount, , fas fa-plus")
+      .addClass("increase-item-amount, fas fa-plus")
       .appendTo(container)
       .on("click", () => {
         changeAmountOfItemsInShoppingcart();
       });
-
     let itemAmount = parseInt(item.amount);
     let itemPrice = parseInt(item.experienceItem.Price);
     let totalAmountPerItem = itemAmount * itemPrice;
@@ -197,10 +202,24 @@ function createHtmlforCart() {
       .text(totalAmountPerItem + " kr")
       .appendTo(container);
 
-    sumOfAllExperiences += totalAmountPerItem;
-    // if (itemAmount < 1) {
-    //   //Ta bort upplevelsen
-    // }
+    calculateTotalSum(item);
+  });
+  $(".price").text(sumOfAllExperiences + " kr");
+}
+
+function calculateTotalSum(cartItem) {
+  let itemAmount = parseInt(cartItem.amount);
+  let itemPrice = parseInt(cartItem.experienceItem.Price);
+  let totalAmountPerItem = itemAmount * itemPrice;
+
+  sumOfAllExperiences += totalAmountPerItem;
+}
+
+function createHtmlforCheckout() {
+  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+
+  $.each(itemsInCart, (i, item) => {
+    calculateTotalSum(item);
   });
   $(".price").text(sumOfAllExperiences + " kr");
 }
@@ -210,8 +229,16 @@ function changeAmountOfItemsInShoppingcart() {
   console.log("till Marvin");
 }
 
+function generateOrderNumber() {
+  $("#ordernumber").text(
+    "Ditt ordernummer är " +
+      Math.floor(Math.random() * (1000 - 800) + 800) +
+      ". Spara detta nummer och ange det när du ska använda din upplevelse!"
+  );
+
 function removeItemsFromCart() {
   sessionStorage.removeItem("cart");
   cartItems = [];
   changeCartIconNumber();
+
 }
