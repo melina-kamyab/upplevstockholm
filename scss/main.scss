@@ -165,15 +165,18 @@ footer {
 
   a:link {
     color: rgb(44, 44, 44);
+    text-decoration: none;
   }
 
   a:hover {
     color: grey;
+    text-decoration: underline;
   }
+
   ul {
     a {
       text-decoration: none;
-      color: black;
+      color: rgb(50, 50, 50);
     }
     display: flex;
     justify-content: space-between;

@@ -16,10 +16,5 @@ function changeCartIcon() {
     totalAmount = 0;
     $(".cart-icon").removeClass("cart-items");
   }
-
   $(".cart-icon").attr("data-number-of-items", totalAmount);
-}
-
-function changeAmountOfItemsInShoppingcart() {
-  console.log("till Marvin");
 }
