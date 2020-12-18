@@ -6,12 +6,12 @@ $(function () {
   createHtmlforCart();
 });
 
+
 function changeCartIcon() {
   let totalAmount = 0;
-  let cartItems = [];
+  let cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
-  if (sessionStorage.getItem("cart") !== null) {
-    cartItems = JSON.parse(sessionStorage.getItem("cart"));
+  if (cartItems.length !== 0) {
     $.each(cartItems, (i, cartItem) => {
       totalAmount += cartItem.amount;
     });
@@ -25,19 +25,19 @@ function changeCartIcon() {
 }
 
 function createHtmlforCart() {
-  let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+  let cartItems = JSON.parse(sessionStorage.getItem("cart"));
   $('.shoppingcart-items-container').html('');
   let itemTotalCost = 0;
   let sumOfAllExperiences = 0;
 
-  if (itemsInCart === null) {
+  if (cartItems.length === 0) {
     $("<p>")
       .text("Varukorgen är tom.")
       .appendTo(".shoppingcart-items-container");
     $(".price").text(sumOfAllExperiences + " kr");
     $(".checkout-btn").attr("disabled", true);
   } else {
-    $.each(itemsInCart, (i, item) => {
+    $.each(cartItems, (i, item) => {
       itemTotalCost = parseInt(item.amount) * parseInt(item.experienceItem.Price);
       sumOfAllExperiences += itemTotalCost;
 
@@ -61,10 +61,11 @@ function createHtmlforCart() {
         .appendTo(detailsContainer)
         .on("click", function (){
           if ( item.amount <= 1){
-            $(this).attr('disabled',true);
+            // alert('Are you sure you want to remove this item?');
+            cartItems.splice(i,1);
           }
           item.amount--;
-          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          sessionStorage.setItem("cart", JSON.stringify(cartItems));
           createHtmlforCart();
           changeCartIcon();
         });
@@ -80,7 +81,7 @@ function createHtmlforCart() {
         .appendTo(detailsContainer)
         .on("click", function () {
           item.amount++;
-          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          sessionStorage.setItem("cart", JSON.stringify(cartItems));
           createHtmlforCart();
           changeCartIcon();
         });
@@ -92,4 +93,9 @@ function createHtmlforCart() {
     });
     $(".price").text(sumOfAllExperiences + " kr");
   }
+}
+function removeShoppingcartItem(item){
+  console.log('i have been removed');
+  let cartItems = JSON.parse(sessionStorage.getItem("cart"));
+  console.log(cartItems);
 }
