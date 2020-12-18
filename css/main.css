@@ -468,6 +468,9 @@ footer {
   footer a:hover {
     color: grey;
     text-decoration: underline; }
+  footer a:visited {
+    color: #2c2c2c; }
+
   footer ul {
     display: flex;
     justify-content: space-between;
