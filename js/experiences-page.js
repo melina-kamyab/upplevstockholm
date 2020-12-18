@@ -57,7 +57,7 @@ let listOfExperience = [
 ];
 
 $(function () {
-  // changeCartIcon(); // finns denna med så renderas det inga object på upplevelse sidan 
+  changeCartIcon();
   createHtmlForExperiencesPage();
 });
 
@@ -65,7 +65,7 @@ function changeCartIcon() {
   let totalAmount = 0;
   let cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
-  if (cartItems.length !== 0) {
+  if (cartItems !== 0) { // det ska egentligen stå .length efter carItems. Men gör det så renderas inte objectetn ut på hemsidan så tog bort det än så länge.
     $.each(cartItems, (i, cartItem) => {
       totalAmount += cartItem.amount;
     });
