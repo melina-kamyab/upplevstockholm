@@ -26,6 +26,7 @@ function changeCartIcon() {
 
 function createHtmlforCart() {
   let itemsInCart = JSON.parse(sessionStorage.getItem("cart"));
+  $('.shoppingcart-items-container').html('');
   let itemTotalCost = 0;
   let sumOfAllExperiences = 0;
 
@@ -54,18 +55,34 @@ function createHtmlforCart() {
         .attr("src", item.experienceItem.Image)
         .addClass("image")
         .appendTo(container);
-      $("<p>").text(item.amount).appendTo(detailsContainer);
-      $("<button>")
+
+        $("<button>")
         .addClass("decrease-item-amount, fas fa-minus")
         .appendTo(detailsContainer)
-        .on("click", () => {
-          changeAmountOfItemsInShoppingcart();
+        .on("click", function (){
+          if ( item.amount <= 1){
+            $(this).attr('disabled',true);
+          }
+          item.amount--;
+          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          createHtmlforCart();
+          changeCartIcon();
         });
+
+        $("<input>")
+        .addClass("show-Amount")
+        .attr('value',item.amount)
+        .attr('type','number')
+        .appendTo(detailsContainer);
+
       $("<button>")
         .addClass("increase-item-amount, fas fa-plus")
         .appendTo(detailsContainer)
-        .on("click", () => {
-          changeAmountOfItemsInShoppingcart();
+        .on("click", function () {
+          item.amount++;
+          sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
+          createHtmlforCart();
+          changeCartIcon();
         });
 
       $("<p>")
