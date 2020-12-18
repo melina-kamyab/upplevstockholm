@@ -139,11 +139,27 @@
   display: flex;
   flex-direction: column;
   align-items: center; }
+  .culture h2,
+  .gastronomy h2,
+  .wellness h2,
+  .adventure h2 {
+    font-size: 2rem; }
+  .culture h3,
+  .gastronomy h3,
+  .wellness h3,
+  .adventure h3 {
+    font-size: 1.5rem; }
   .culture h4,
   .gastronomy h4,
   .wellness h4,
   .adventure h4 {
-    padding-top: 1rem; }
+    font-size: 1.5rem; }
+  .culture h5,
+  .gastronomy h5,
+  .wellness h5,
+  .adventure h5 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem; }
   .culture .item-container,
   .gastronomy .item-container,
   .wellness .item-container,
@@ -155,7 +171,29 @@
     padding: 1rem;
     background-color: white;
     box-shadow: 3px 3px #8d8d8d;
-    height: 350px; }
+    height: 500px;
+    text-align: center; }
+    .culture .item-container img,
+    .gastronomy .item-container img,
+    .wellness .item-container img,
+    .adventure .item-container img {
+      padding-bottom: 1rem; }
+    .culture .item-container p,
+    .gastronomy .item-container p,
+    .wellness .item-container p,
+    .adventure .item-container p {
+      padding-bottom: 1rem; }
+    .culture .item-container p:nth-child(3),
+    .gastronomy .item-container p:nth-child(3),
+    .wellness .item-container p:nth-child(3),
+    .adventure .item-container p:nth-child(3) {
+      margin-top: auto; }
+    .culture .item-container p:nth-child(4),
+    .gastronomy .item-container p:nth-child(4),
+    .wellness .item-container p:nth-child(4),
+    .adventure .item-container p:nth-child(4) {
+      margin-top: auto;
+      font-weight: bold; }
     .culture .item-container button,
     .gastronomy .item-container button,
     .wellness .item-container button,
@@ -174,7 +212,8 @@
   .wellness div,
   .adventure div {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    width: 100%; }
     .culture div button:hover,
     .gastronomy div button:hover,
     .wellness div button:hover,
@@ -407,48 +446,39 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-top: auto;
-}
-footer div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0.8rem;
-}
-footer .logo {
-  display: flex;
-  justify-content: space-evenly;
-  border-top: 1px solid white;
-  padding: 1.3rem;
-  background-color: #323232;
-  color: white;
-  font-size: 1.2rem;
-}
-footer i {
-  align-self: center;
-}
-footer a:link {
-  color: #2c2c2c;
-  text-decoration: none;
-}
-footer a:hover {
-  color: grey;
-  text-decoration: underline;
-}
-footer ul {
-  display: flex;
-  justify-content: space-between;
-  align-self: center;
-  list-style-type: none;
-  padding-left: 0;
-  width: 40%;
-  color: #323232;
-}
-footer ul a {
-  text-decoration: none;
-  color: #323232;
-}
+  margin-top: auto; }
+  footer div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem; }
+  footer .logo {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid white;
+    padding: 1.3rem;
+    background-color: #323232;
+    color: white;
+    font-size: 1.2rem; }
+  footer i {
+    align-self: center; }
+  footer a:link {
+    color: #2c2c2c;
+    text-decoration: none; }
+  footer a:hover {
+    color: grey;
+    text-decoration: underline; }
+  footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    list-style-type: none;
+    padding-left: 0;
+    width: 40%;
+    color: #323232; }
+    footer ul a {
+      text-decoration: none;
+      color: #323232; }
 
 .footer-payment {
   display: flex;
