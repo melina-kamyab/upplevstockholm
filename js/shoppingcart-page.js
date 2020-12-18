@@ -46,15 +46,15 @@ function createHtmlforCart() {
         .attr("id", item.experienceItem.Id)
         .appendTo($(".shoppingcart-items-container"));
 
-      $("<h5>").text(item.experienceItem.Title).appendTo(container);
+      let detailsContainer = $("<div>")
+        .addClass("details-container")
+        .appendTo($(".shoppingcart-items-container"));
 
+      $("<h5>").text(item.experienceItem.Title).appendTo(container);
       $("<img>")
         .attr("src", item.experienceItem.Image)
         .addClass("image")
         .appendTo(container);
-        let detailsContainer = $("<div>")
-        .addClass("details-container")
-        .appendTo($("#"+item.experienceItem.Id));
 
         $("<button>")
         .addClass("decrease-item-amount, fas fa-minus")
@@ -66,6 +66,7 @@ function createHtmlforCart() {
           item.amount--;
           sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
           createHtmlforCart();
+          changeCartIcon();
         });
 
         $("<input>")
@@ -81,6 +82,7 @@ function createHtmlforCart() {
           item.amount++;
           sessionStorage.setItem("cart", JSON.stringify(itemsInCart));
           createHtmlforCart();
+          changeCartIcon();
         });
 
       $("<p>")
