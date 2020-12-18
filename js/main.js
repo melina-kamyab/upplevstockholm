@@ -6,7 +6,7 @@ function changeCartIcon() {
   let totalAmount = 0;
   let cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
-  if (cartItems.length !== 0) {
+  if (cartItems !== null) { // vet inte varför felmedelandet försvinner när jag tar bort .length på just denna rad.
     $.each(cartItems, (i, cartItem) => {
       totalAmount += cartItem.amount;
     });

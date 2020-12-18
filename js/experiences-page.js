@@ -57,7 +57,7 @@ let listOfExperience = [
 ];
 
 $(function () {
-  changeCartIcon();
+  // changeCartIcon(); // finns denna med så renderas det inga object på upplevelse sidan 
   createHtmlForExperiencesPage();
 });
 
