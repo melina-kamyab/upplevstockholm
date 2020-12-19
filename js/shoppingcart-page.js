@@ -16,7 +16,7 @@ function changeCartIcon() {
     });
     $(".cart-icon").addClass("cart-items");
   }
-  if ((totalAmount = 0)) {
+  if (totalAmount === 0) {
     $(".cart-icon").removeClass("cart-items");
   }
 
