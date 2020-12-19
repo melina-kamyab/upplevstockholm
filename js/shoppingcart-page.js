@@ -24,7 +24,7 @@ function changeCartIcon() {
 }
 
 function createHtmlforCart() {
-  let cartItems = JSON.parse(sessionStorage.getItem("cart"));
+  let cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
   $(".shoppingcart-items-container").html("");
   let itemTotalCost = 0;
   let sumOfAllExperiences = 0;
