@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: column;
     div {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
     input {
-        height: 2rem;
-        margin-bottom: 0.5rem;
+      height: 2rem;
+      margin-bottom: 0.5rem;
     }
   }
   .shoppingcart-total {
@@ -34,11 +34,12 @@
     button {
       padding: 0.5rem;
     }
-    a:link, a:visited {
-        color: white;
+    a:link,
+    a:visited {
+      color: white;
     }
     a:hover {
-        color: gray;
+      color: gray;
     }
   }
 }
@@ -50,17 +51,17 @@
     display: flex;
     align-items: center;
     form {
-        flex-direction: row;
-        justify-content: space-around;
+      flex-direction: row;
+      justify-content: space-around;
+      div {
+        width: 50%;
+        padding: 5rem;
         div {
-            width: 50%;
-            padding: 5rem;
-            div {
-                width: 100%;
-                padding: 0;
-            }
+          width: 100%;
+          padding: 0;
         }
       }
+    }
     .shoppingcart-items-container,
     .payment-details {
       width: 70%;
@@ -73,5 +74,116 @@
         min-width: 30%;
       }
     }
+  }
+}
+// EXPERINCES STYLING
+.shoppingcart-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.shoppingcart-items-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.big-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-container {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(206, 206, 206);
+  color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 3px rgb(141, 141, 141);
+}
+
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .show-amount {
+    width: 2rem;
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #323232;
+    border-style: none;
+    text-align: center;
+    border: 1px solid white;
+  }
+
+  button {
+    font-size: 1.3rem;
+    color: #323232;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin: 1rem;
+  }
+}
+
+.shoppingcart-total {
+  border-top: 1px solid white;
+  .checkout-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+  .shoppingcart-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .big-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+  }
+
+  .item-container {
+    h5 {
+      font-size: 1.2rem;
+      padding-bottom: 1rem;
+    }
+
+    img {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .details-container {
+    button {
+      font-size: 1.3rem;
+      color: #323232;
+    }
+  }
+
+  .shoppingcart-total {
+    border-top: none;
+    border-left: 1px solid white;
+    height: 100%;
   }
 }

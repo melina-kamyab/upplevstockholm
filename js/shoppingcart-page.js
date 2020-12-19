@@ -6,7 +6,6 @@ $(function () {
   createHtmlforCart();
 });
 
-
 function changeCartIcon() {
   let totalAmount = 0;
   let cartItems = JSON.parse(sessionStorage.getItem("cart"));
@@ -26,7 +25,7 @@ function changeCartIcon() {
 
 function createHtmlforCart() {
   let cartItems = JSON.parse(sessionStorage.getItem("cart"));
-  $('.shoppingcart-items-container').html('');
+  $(".shoppingcart-items-container").html("");
   let itemTotalCost = 0;
   let sumOfAllExperiences = 0;
 
@@ -38,17 +37,22 @@ function createHtmlforCart() {
     $(".checkout-btn").attr("disabled", true);
   } else {
     $.each(cartItems, (i, item) => {
-      itemTotalCost = parseInt(item.amount) * parseInt(item.experienceItem.Price);
+      itemTotalCost =
+        parseInt(item.amount) * parseInt(item.experienceItem.Price);
       sumOfAllExperiences += itemTotalCost;
+
+      let bigContainer = $("<div>")
+        .addClass("big-container")
+        .appendTo(".shoppingcart-items-container");
 
       let container = $("<div>")
         .addClass("item-container")
         .attr("id", item.experienceItem.Id)
-        .appendTo($(".shoppingcart-items-container"));
+        .appendTo(bigContainer);
 
       let detailsContainer = $("<div>")
         .addClass("details-container")
-        .appendTo($(".shoppingcart-items-container"));
+        .appendTo(bigContainer);
 
       $("<h5>").text(item.experienceItem.Title).appendTo(container);
       $("<img>")
@@ -56,13 +60,13 @@ function createHtmlforCart() {
         .addClass("image")
         .appendTo(container);
 
-        $("<button>")
+      $("<button>")
         .addClass("decrease-item-amount, fas fa-minus")
         .appendTo(detailsContainer)
-        .on("click", function (){
-          if ( item.amount <= 1){
+        .on("click", function () {
+          if (item.amount <= 1) {
             // alert('Are you sure you want to remove this item?');
-            cartItems.splice(i,1);
+            cartItems.splice(i, 1);
           }
           item.amount--;
           sessionStorage.setItem("cart", JSON.stringify(cartItems));
@@ -70,10 +74,10 @@ function createHtmlforCart() {
           changeCartIcon();
         });
 
-        $("<input>")
-        .addClass("show-Amount")
-        .attr('value',item.amount)
-        .attr('type','number')
+      $("<input>")
+        .addClass("show-amount")
+        .attr("value", item.amount)
+        .attr("type", "text")
         .appendTo(detailsContainer);
 
       $("<button>")
@@ -94,8 +98,8 @@ function createHtmlforCart() {
     $(".price").text(sumOfAllExperiences + " kr");
   }
 }
-function removeShoppingcartItem(item){
-  console.log('i have been removed');
+function removeShoppingcartItem(item) {
+  console.log("i have been removed");
   let cartItems = JSON.parse(sessionStorage.getItem("cart"));
   console.log(cartItems);
 }
