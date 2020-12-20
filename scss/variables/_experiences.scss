@@ -1,11 +1,14 @@
 // EXPERINCES STYLING
+main {
+  background-color: rgb(207, 211, 206);
+}
 .culture,
 .gastronomy,
 .wellness,
 .adventure {
   padding: 1rem;
-  background-color: rgb(206, 206, 206);
-  color: rgb(50, 50, 50);
+  background-color: rgb(207, 211, 206);
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,14 +17,20 @@
     font-size: 2rem;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   h4 {
     font-size: 1.5rem;
   }
   h5 {
-    font-size: 1.2rem;
-    padding-bottom: 1rem;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    color: rgb(235, 235, 235);
+  }
+
+  p {
+    color: rgb(235, 235, 235);
+    font-size: 0.9rem;
   }
 
   .item-container {
@@ -30,8 +39,8 @@
     align-items: center;
     margin: 1rem;
     padding: 1rem;
-    background-color: white;
-    box-shadow: 3px 3px rgb(141, 141, 141);
+    background-color: rgb(131, 155, 151);
+    box-shadow: 3px 3px rgb(167, 167, 167);
     height: 500px;
     text-align: center;
 
@@ -44,11 +53,11 @@
     }
 
     p:nth-child(3) {
-      margin-top:auto;
+      margin-top: auto;
     }
 
     p:nth-child(4) {
-      margin-top:auto;
+      margin-top: auto;
       font-weight: bold;
     }
 
@@ -57,8 +66,8 @@
       margin-top: auto;
       padding: 1rem;
       border: 0;
-      background-color: rgb(206, 206, 206);
-      color: rgb(50, 50, 50);
+      background-color: rgb(198, 180, 151);
+      color: rgb(235, 235, 235);
       box-shadow: 3px 3px rgb(141, 141, 141);
     }
   }
