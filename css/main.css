@@ -170,8 +170,9 @@
   background-image: url("../assets/adventure.jpg");
 }
 
-main {
-  background-color: #cfd3ce;
+main,
+header {
+  background-color: #ebebeb;
 }
 
 .culture,
@@ -180,7 +181,6 @@ main {
 .adventure {
   padding: 1rem;
   background-color: #cfd3ce;
-  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -301,8 +301,8 @@ main {
 .shoppingcart-container,
 .payment-container {
   flex: 1;
-  color: white;
-  background-color: #323232;
+  color: black;
+  background-color: #cfd3ce;
 }
 .shoppingcart-container form,
 .payment-container form {
@@ -318,6 +318,11 @@ main {
 .payment-container form input {
   height: 2rem;
   margin-bottom: 0.5rem;
+}
+.shoppingcart-container .item-container,
+.payment-container .item-container {
+  background-color: #839b97;
+  color: #ebebeb;
 }
 .shoppingcart-container .shoppingcart-total,
 .payment-container .shoppingcart-total {
@@ -335,6 +340,9 @@ main {
 .shoppingcart-container .shoppingcart-total button,
 .payment-container .shoppingcart-total button {
   padding: 0.5rem;
+  background-color: #c6b497;
+  color: #ebebeb;
+  border: none;
 }
 .shoppingcart-container .shoppingcart-total a:link,
 .shoppingcart-container .shoppingcart-total a:visited,
@@ -562,7 +570,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #cfd3ce;
+  background-color: #ebebeb;
 }
 
 .nav-logo {
