@@ -6,11 +6,13 @@
   align-items: center;
   justify-content: space-evenly;
   margin-top: 1px;
-  a:link, a:active, a:visited {
-    color: rgb(44, 44, 44);
+  a:link,
+  a:active,
+  a:visited {
+    color: black;
   }
   a:hover {
-    color: grey;
+    color: rgb(44, 44, 44);
   }
   h2 {
     margin: 0;
@@ -18,7 +20,12 @@
   div {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+    a:link {
+      margin: 0.5rem;
+    }
   }
 }
 .experience:nth-child(1) {
