@@ -42,7 +42,7 @@ header {
     margin: 2.5rem;
     padding: 1rem;
     background-color: rgb(131, 155, 151);
-    box-shadow: 3px 3px rgb(167, 167, 167);
+    box-shadow: 3px 3px rgb(119, 140, 135);
     height: auto;
     text-align: center;
 
@@ -66,7 +66,7 @@ header {
       border: 0;
       background-color: rgb(198, 180, 151);
       color: rgb(235, 235, 235);
-      box-shadow: 3px 3px rgb(141, 141, 141);
+      box-shadow: 2px 2px rgb(160, 146, 124);
     }
   }
 }
@@ -88,7 +88,7 @@ header {
       flex-direction: row;
       width: 100%;
       button:hover {
-        background-color: rgb(168, 168, 168);
+        background-color: rgb(160, 146, 124);
       }
 
       button:focus {
