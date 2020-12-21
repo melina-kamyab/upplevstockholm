@@ -417,12 +417,7 @@ header {
   main .big-container .item-container .image {
     width: 80%; } }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-.thankspage-container h1, .thankspage-container p, .thankspage-container a {
+.thankspage-container h1, .thankspage-container p {
   text-align: unset;
   margin-bottom: 1rem; }
 
@@ -435,26 +430,30 @@ header {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  padding: 1rem; }
-  .thankspage-container a {
-    text-decoration: none;
-    color: black; }
-    .thankspage-container a button {
-      border: none;
-      border-radius: 5px;
-      padding: 0.7rem;
-      cursor: pointer;
-      background-color: #e7e7e7; }
+  padding: 1rem;
+  background-color: #cfd3ce;
+  color: #323232; }
+  .thankspage-container button {
+    width: 60%;
+    margin-top: auto;
+    padding: 1rem;
+    border: 0;
+    background-color: #c6b497;
+    color: #ebebeb;
+    box-shadow: 2px 2px #a0927c; }
+  .thankspage-container button:hover {
+    background-color: #a0927c; }
+  .thankspage-container button:focus {
+    outline: 0; }
+  .thankspage-container span {
+    background-color: none;
+    padding: 0; }
 
 @media screen and (min-width: 769px) {
-  .thankspage-container h1, .thankspage-container p, .thankspage-container a {
-    color: white; }
-  .thankspage-container {
-    background-color: #323232; }
-    .thankspage-container p {
-      width: 50rem; }
-    .thankspage-container a button {
-      padding: 1rem; } }
+  .thankspage-container p {
+    width: 50rem; }
+  .thankspage-container button {
+    padding: 1rem; } }
 
 * {
   box-sizing: border-box; }
@@ -547,10 +546,6 @@ main p {
 main span {
   background-color: rgba(207, 211, 206, 0.5);
   padding: 5px; }
-
-main .thank-you-message span {
-  background-color: #323232;
-  padding: 0; }
 
 main .image {
   width: 100%; }
