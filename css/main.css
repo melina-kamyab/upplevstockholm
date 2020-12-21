@@ -328,16 +328,6 @@ header {
   height: 2rem;
   margin-bottom: 0.5rem;
 }
-.shoppingcart-container .item-container,
-.payment-container .item-container {
-  background-color: #839b97;
-  color: #ebebeb;
-  text-align: center;
-}
-.shoppingcart-container .item-container h5,
-.payment-container .item-container h5 {
-  font-size: 1.5rem;
-}
 .shoppingcart-container .shoppingcart-total,
 .payment-container .shoppingcart-total {
   display: flex;
@@ -432,15 +422,17 @@ header {
 .item-container {
   padding: 1rem;
   margin: 1rem;
-  background-color: #cecece;
-  color: #323232;
+  background-color: #839b97;
+  color: #ebebeb;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   box-shadow: 3px 3px #778c87;
 }
 .item-container h5 {
   padding-bottom: 1rem;
+  font-size: 1.3rem;
 }
 
 .details-container {
@@ -501,6 +493,7 @@ header {
   }
   .item-container h5 {
     padding-bottom: 1rem;
+    font-size: 0.9rem;
   }
   .item-container img {
     padding-bottom: 1rem;
@@ -519,6 +512,10 @@ header {
     height: 100%;
   }
 
+  main .big-container .item-container .image {
+    width: 80%;
+  }
+}
 .thankspage-container h1, .thankspage-container p {
   text-align: unset;
   margin-bottom: 1rem;
@@ -535,36 +532,33 @@ header {
   justify-content: center;
   padding: 1rem;
   background-color: #cfd3ce;
-  color: #323232; }
-  .thankspage-container button {
-    width: 60%;
-    margin-top: auto;
-    padding: 1rem;
-    border: 0;
-    background-color: #c6b497;
-    color: #ebebeb;
-    box-shadow: 2px 2px #a0927c; }
-  .thankspage-container button:hover {
-    background-color: #a0927c; }
-  .thankspage-container button:focus {
-    outline: 0; }
-  .thankspage-container span {
-    background-color: none;
-    padding: 0; }
+  color: #323232;
+}
+.thankspage-container button {
+  width: 60%;
+  margin-top: auto;
+  padding: 1rem;
+  border: 0;
+  background-color: #c6b497;
+  color: #ebebeb;
+  box-shadow: 2px 2px #a0927c;
+}
+.thankspage-container button:hover {
+  background-color: #a0927c;
+}
+.thankspage-container button:focus {
+  outline: 0;
+}
+.thankspage-container span {
+  background-color: none;
+  padding: 0;
+}
 
 @media screen and (min-width: 769px) {
   .thankspage-container p {
-    width: 50rem; }
-  .thankspage-container button {
-    padding: 1rem; } }
-
-  .thankspage-container {
-    background-color: #323232;
-  }
-  .thankspage-container p {
     width: 50rem;
   }
-  .thankspage-container a button {
+  .thankspage-container button {
     padding: 1rem;
   }
 }
@@ -670,9 +664,8 @@ main p {
 }
 main span {
   background-color: rgba(207, 211, 206, 0.5);
-
-  padding: 5px; }
-
+  padding: 5px;
+}
 main .image {
   width: 100%;
 }
