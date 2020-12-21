@@ -203,6 +203,7 @@ header {
 .wellness h4,
 .adventure h4 {
   font-size: 1.5rem;
+  margin-bottom: 0;
 }
 .culture h5,
 .gastronomy h5,
@@ -212,7 +213,7 @@ header {
   padding-bottom: 0.5rem;
   color: #ebebeb;
   height: auto;
-  padding: 1rem;
+  margin: 0;
 }
 .culture p,
 .gastronomy p,
@@ -220,6 +221,7 @@ header {
 .adventure p {
   color: #ebebeb;
   font-size: 0.9rem;
+  margin: 0;
 }
 .culture .item-container,
 .gastronomy .item-container,
@@ -239,7 +241,7 @@ header {
 .gastronomy .item-container p,
 .wellness .item-container p,
 .adventure .item-container p {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .culture .item-container p:nth-child(3),
 .gastronomy .item-container p:nth-child(3),
@@ -273,6 +275,13 @@ header {
 .wellness h5,
 .adventure h5 {
     height: 4.5rem;
+  }
+  .culture h4,
+.gastronomy h4,
+.wellness h4,
+.adventure h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
   }
   .culture p,
 .gastronomy p,
@@ -363,6 +372,10 @@ header {
 .payment-container .shoppingcart-total a:hover {
   color: gray;
 }
+.shoppingcart-container .agreement-text,
+.payment-container .agreement-text {
+  font-size: 0.9rem;
+}
 
 @media screen and (min-width: 769px) {
   .shoppingcart-container,
@@ -448,7 +461,6 @@ header {
   background-color: #323232;
   border-style: none;
   text-align: center;
-  border: 1px solid white;
 }
 .details-container button {
   font-size: 1.3rem;
@@ -480,25 +492,23 @@ header {
     display: flex;
     flex-direction: row;
   }
+  .shoppingcart-container .item-container {
+    width: 35%;
+  }
+  .shoppingcart-container .item-container h5 {
+    padding-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  .shoppingcart-container .item-container img {
+    padding-bottom: 1rem;
+    width: 100%;
+  }
 
   .big-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin: 1rem;
-  }
-
-  .item-container {
-    width: 35%;
-  }
-  .item-container h5 {
-    padding-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-  .item-container img {
-    padding-bottom: 1rem;
-    width: 0%;
-    width: 30%;
   }
 
   .details-container button {
@@ -510,10 +520,6 @@ header {
     border-top: none;
     border-left: 1px solid white;
     height: 100%;
-  }
-
-  main .big-container .item-container .image {
-    width: 80%;
   }
 }
 .thankspage-container h1, .thankspage-container p {
@@ -712,7 +718,6 @@ footer a:link {
   text-decoration: none;
 }
 footer a:hover {
-  color: grey;
   text-decoration: underline;
 }
 footer a:visited {

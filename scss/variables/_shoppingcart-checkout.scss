@@ -50,6 +50,10 @@
       color: gray;
     }
   }
+
+  .agreement-text {
+    font-size: 0.9rem;
+  }
 }
 
 // DESKTOP VERSION OF SHOPPINGCART & CHECKOUT
@@ -132,7 +136,6 @@
     background-color: #323232;
     border-style: none;
     text-align: center;
-    border: 1px solid white;
   }
 
   button {
@@ -168,6 +171,18 @@
   .shoppingcart-container {
     display: flex;
     flex-direction: row;
+    .item-container {
+      width: 35%;
+      h5 {
+        padding-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      img {
+        padding-bottom: 1rem;
+        width: 100%;
+      }
+    }
   }
 
   .big-container {
@@ -175,20 +190,6 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 1rem;
-  }
-
-  .item-container {
-    width: 35%;
-    h5 {
-      padding-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
-    img {
-      padding-bottom: 1rem;
-      width: 0%;
-      width: 30%;
-    }
   }
 
   .details-container {
@@ -202,10 +203,5 @@
     border-top: none;
     border-left: 1px solid white;
     height: 100%;
-  }
-  main {
-    .big-container .item-container .image {
-      width: 80%;
-    }
   }
 }
