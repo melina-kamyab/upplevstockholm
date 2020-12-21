@@ -1,0 +1,50 @@
+.thankspage-container h1,.thankspage-container p{
+    text-align: unset;
+    margin-bottom: 1rem;
+}
+.thankspage-container{
+    height: auto;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgb(207, 211, 206);
+    color: rgb(50, 50, 50);
+        button {
+            width: 60%;
+            margin-top: auto;
+            padding: 1rem;
+            border: 0;
+            background-color: rgb(198, 180, 151);
+            color: rgb(235, 235, 235);
+            box-shadow: 2px 2px rgb(160, 146, 124);
+          }
+
+          button:hover {
+            background-color: rgb(160, 146, 124);
+          }
+    
+          button:focus {
+            outline: 0;
+          }
+    span {
+        background-color: none;
+        padding: 0;
+    }
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+    .thankspage-container{
+        p{
+            width: 50rem;
+        }
+            button{
+                padding: 1rem;
+            }
+    }
+  }

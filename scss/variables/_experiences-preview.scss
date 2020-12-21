@@ -1,0 +1,43 @@
+.experience {
+  height: 200px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1px;
+  a:link,
+  a:active,
+  a:visited {
+    color: black;
+  }
+  a:hover {
+    color: rgb(44, 44, 44);
+  }
+  h2 {
+    margin: 0;
+  }
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a:link {
+      margin: 0.5rem;
+    }
+  }
+}
+
+.experience:nth-child(1) {
+  background-image: url("../assets/culture.jpg");
+}
+.experience:nth-child(2) {
+  background-image: url("../assets/gastronomi.jpg");
+}
+.experience:nth-child(3) {
+  background-image: url("../assets/wellness.jpg");
+}
+.experience:nth-child(4) {
+  background-image: url("../assets/adventure.jpg");
+}

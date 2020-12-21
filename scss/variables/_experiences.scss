@@ -1,0 +1,105 @@
+// EXPERINCES STYLING
+main,
+header {
+  background-color: rgb(235, 235, 235);
+}
+.culture,
+.gastronomy,
+.wellness,
+.adventure {
+  padding: 1rem;
+  background-color: rgb(207, 211, 206);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  h5 {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    color: rgb(235, 235, 235);
+    height: auto;
+    margin: 0;
+  }
+
+  p {
+    color: rgb(235, 235, 235);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem;
+    padding: 1rem;
+    background-color: rgb(131, 155, 151);
+    box-shadow: 3px 3px rgb(119, 140, 135);
+    height: auto;
+    text-align: center;
+
+    p {
+      padding: 0.5rem;
+    }
+
+    p:nth-child(3) {
+      margin-top: auto;
+    }
+
+    p:nth-child(4) {
+      margin-top: auto;
+      font-weight: bold;
+    }
+
+    button {
+      width: 60%;
+      margin-top: auto;
+      padding: 1rem;
+      border: 0;
+      background-color: rgb(198, 180, 151);
+      color: rgb(235, 235, 235);
+      box-shadow: 2px 2px rgb(160, 146, 124);
+    }
+  }
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+  .culture,
+  .gastronomy,
+  .wellness,
+  .adventure {
+    h5 {
+      height: 4.5rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+    p {
+      padding: 0;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      button:hover {
+        background-color: rgb(160, 146, 124);
+      }
+
+      button:focus {
+        outline: 0;
+      }
+    }
+  }
+}

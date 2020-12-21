@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varukorg</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/thanks-page.js"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <div class="hamburger">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+          </div>
+        </label>
+        <ul class="navbar">
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="experiences.html">Upplevelser</a></li>
+        </ul>
+      </div>
+      <a href="index.html" class="nav-logo"
+        ><i class="fas fa-wind"></i> Upplev Stockholm</a
+      >
+      <a href="shoppingcart.html">
+        <div class="cart-icon" data-number-of-items="0">
+          <i class="fas fa-shopping-cart fa-2x"></i>
+        </div>
+      </a>
+    </header>
+    <main>
+      <div class="thankspage-container">
+        <h1>Vi har mottagit din order!</h1>
+        <p class="thank-you-message">
+          Tack för din beställning och att du har valt att köpa din upplevelse
+          hos oss.
+          <span id="ordernumber"></span>
+        </p>
+
+        <a href="./index.html"><button>Tillbaka till startsidan</button></a>
+      </div>
+    </main>
+    <footer class="footer-container">
+      <div class="logo">
+        <p>Upplev</p>
+        <i class="fas fa-wind fa-lg"></i>
+        <p>Stockholm</p>
+      </div>
+      <div class="social">
+        <ul>
+          <a href=""
+            ><li class="facebook"><i class="fab fa-facebook fa-lg"></i></li
+          ></a>
+          <a href=""
+            ><li class="instagram"><i class="fab fa-instagram fa-lg"></i></li
+          ></a>
+          <a href=""
+            ><li class="youtube"><i class="fab fa-youtube fa-lg"></i></li
+          ></a>
+        </ul>
+      </div>
+      <div class="footer-payment">
+        <img class="payment-method" src="assets/mastercard.svg" />
+        <img class="payment-method" src="assets/klarna.svg" />
+        <img class="payment-method" src="assets/visa.svg" />
+        <img class="payment-method" src="assets/paypal.svg" />
+      </div>
+      <a href=""><div class="footer-item">Köpvillkor</div></a>
+      <div class="footer-item"><a href="">&copy; Copyright 2020</a></div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+//SHOPPINGCART & CHECKOUT STYLING STARTS HERE
+.shoppingcart-items-container,
+.shoppingcart-total,
+.payment-details {
+  padding: 1rem;
+}
+.shoppingcart-container,
+.payment-container {
+  flex: 1;
+  color: black;
+  background-color: rgb(207, 211, 206);
+  form {
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      height: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .shoppingcart-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .checkout-container {
+      display: flex;
+      justify-content: space-between;
+      width: 170px;
+    }
+    button {
+      padding: 0.5rem;
+      background-color: rgb(198, 180, 151);
+      color: rgb(235, 235, 235);
+      border: none;
+      box-shadow: 2px 2px rgb(160, 146, 124);
+    }
+    button:hover {
+      background-color: rgb(160, 146, 124);
+    }
+    a:link,
+    a:visited {
+      color: white;
+    }
+    a:hover {
+      color: gray;
+    }
+  }
+
+  .agreement-text {
+    font-size: 0.9rem;
+  }
+}
+
+// DESKTOP VERSION OF SHOPPINGCART & CHECKOUT
+@media screen and (min-width: 769px) {
+  .shoppingcart-container,
+  .payment-container {
+    display: flex;
+    align-items: center;
+    form {
+      flex-direction: row;
+      justify-content: space-around;
+      div {
+        width: 50%;
+        padding: 5rem;
+        div {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+    .shoppingcart-items-container,
+    .payment-details {
+      width: 70%;
+    }
+    .shoppingcart-total {
+      width: 30%;
+      .checkout-container {
+        display: flex;
+        justify-content: space-between;
+        min-width: 30%;
+      }
+    }
+  }
+}
+
+// EXPERINCES STYLING
+.shoppingcart-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.shoppingcart-items-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.big-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-container {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(131, 155, 151);
+  color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 3px rgb(119, 140, 135);
+  h5 {
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+.details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .show-amount {
+    width: 2rem;
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #323232;
+    border-style: none;
+    text-align: center;
+  }
+
+  button {
+    font-size: 1.3rem;
+    color: #323232;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin: 1rem;
+  }
+}
+
+.shoppingcart-total {
+  border-top: 1px solid white;
+  .checkout-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+}
+
+// DESKTOP VERSION OF EXPERIENCES
+@media screen and (min-width: 769px) {
+  .shoppingcart-container {
+    display: flex;
+    flex-direction: row;
+    .item-container {
+      width: 35%;
+      h5 {
+        padding-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      img {
+        padding-bottom: 1rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .big-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1rem;
+  }
+
+  .details-container {
+    button {
+      font-size: 1.3rem;
+      color: #323232;
+    }
+  }
+
+  .shoppingcart-total {
+    border-top: none;
+    border-left: 1px solid white;
+    height: 100%;
+  }
+}
